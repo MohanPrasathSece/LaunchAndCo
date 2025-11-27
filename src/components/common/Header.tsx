@@ -56,7 +56,7 @@ const Header: React.FC = () => {
             <Button
               asChild
               size="sm"
-              className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-button hover:shadow-glow transition-all"
+              className="rounded-full bg-white text-background hover:bg-white/90 shadow-lg hover:shadow-xl transition-all font-semibold"
             >
               <Link to="/contact">Get Started</Link>
             </Button>
@@ -87,8 +87,8 @@ const Header: React.FC = () => {
                     setIsMenuOpen(false);
                   }}
                   className={`w-full flex items-center justify-between rounded-2xl px-4 py-3 text-base font-medium transition-smooth ${location.pathname === item.path
-                      ? "bg-primary/15 text-foreground"
-                      : "bg-transparent text-muted-foreground hover:bg-muted/40 hover:text-foreground"
+                    ? "bg-primary/15 text-foreground"
+                    : "bg-transparent text-muted-foreground hover:bg-muted/40 hover:text-foreground"
                     }`}
                 >
                   <span>{item.name}</span>
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
 
               <Button
                 asChild
-                className="w-full mt-3 rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 shadow-button"
+                className="w-full mt-3 rounded-2xl bg-white text-background hover:bg-white/90 shadow-lg font-semibold"
               >
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                   Get Started

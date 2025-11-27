@@ -400,7 +400,7 @@ const About: React.FC = () => {
           <Button
             asChild
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-button hover:shadow-glow text-lg px-8 transition-all"
+            className="bg-white text-background hover:bg-white/90 shadow-lg hover:shadow-xl text-lg px-8 transition-all font-semibold"
           >
             <Link to="/contact">Book a Strategy Call</Link>
           </Button>

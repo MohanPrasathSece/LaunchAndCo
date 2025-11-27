@@ -117,8 +117,8 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <section className="relative min-h-screen flex items-center pt-28 pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-hero overflow-hidden">
+    <div className="min-h-screen bg-[image:var(--gradient-hero)] bg-fixed">
+      <section className="relative min-h-screen flex items-center pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-5xl sm:text-6xl xl:text-7xl font-semibold text-foreground mb-5 leading-tight tracking-tight font-['DM_Sans']">
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
               <Button
                 asChild
                 size="lg"
-                className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-6 shadow-button hover:shadow-glow transition-all"
+                className="rounded-full bg-white text-background hover:bg-white/90 text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-all font-semibold"
               >
                 <Link to="/how-we-work">
                   View Engagement Models
@@ -217,7 +217,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-4">
             From Strategy to Execution in 3 Phases
@@ -253,7 +253,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-12">
             Trusted by Founders Who Demand Results
@@ -286,7 +286,7 @@ const Home: React.FC = () => {
       </section>
 
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary text-primary-foreground">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 text-primary-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">
             Ready to Build a Predictable Revenue Engine?
@@ -297,7 +297,7 @@ const Home: React.FC = () => {
           <Button
             asChild
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-button hover:shadow-glow text-lg px-8 transition-all"
+            className="bg-white text-background hover:bg-white/90 shadow-lg hover:shadow-xl text-lg px-8 transition-all font-semibold"
           >
             <Link to="/contact">Book Your Strategy Call</Link>
           </Button>

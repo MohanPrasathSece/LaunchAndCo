@@ -159,7 +159,7 @@ const Contact: React.FC = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6"
+                  className="w-full sm:w-auto bg-white text-background hover:bg-white/90 text-lg px-8 py-6 shadow-lg font-semibold"
                 >
                   Send message
                 </Button>
