@@ -15,7 +15,7 @@ export const GlassCard: React.FC<GlassCardProps> = ({
   return (
     <div
       className={cn(
-        "rounded-lg p-6 bg-card border border-border shadow-card transition-smooth",
+        "rounded-lg p-6 bg-card border border-border shadow-card transition-smooth text-base",
         hover && "hover:shadow-hover hover:-translate-y-1",
         className
       )}

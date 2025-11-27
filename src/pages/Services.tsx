@@ -228,11 +228,11 @@ const Services: React.FC = () => {
                   <div className="space-y-6">
                     {pillar.content.map((item, idx) => (
                       <div key={idx}>
-                        <h4 className="font-bold text-foreground mb-2 flex items-center">
+                        <h4 className="font-bold text-foreground mb-2 flex items-center text-base">
                           <Lightbulb className="w-4 h-4 text-accent mr-2" />
                           {item.heading}
                         </h4>
-                        <p className="text-muted-foreground text-sm leading-relaxed pl-6">
+                        <p className="text-muted-foreground text-base leading-relaxed pl-6">
                           {item.text}
                         </p>
                       </div>
@@ -244,7 +244,7 @@ const Services: React.FC = () => {
               <div className={pillar.imagePosition === 'right' ? 'xl:order-1' : ''}>
                 <div className="space-y-6">
                   <GlassCard>
-                    <h4 className="font-bold text-foreground mb-4 flex items-center">
+                    <h4 className="font-bold text-foreground mb-4 flex items-center text-base">
                       <FileText className="w-5 h-5 text-primary mr-2" />
                       Deliverables
                     </h4>
@@ -252,18 +252,18 @@ const Services: React.FC = () => {
                       {pillar.deliverables.map((item, idx) => (
                         <li key={idx} className="flex items-start">
                           <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground text-sm">{item}</span>
+                          <span className="text-muted-foreground text-base">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </GlassCard>
 
                   <GlassCard>
-                    <h4 className="font-bold text-foreground mb-4 flex items-center">
+                    <h4 className="font-bold text-foreground mb-4 flex items-center text-base">
                       <BarChart3 className="w-5 h-5 text-accent mr-2" />
                       Ideal For
                     </h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-base leading-relaxed">
                       {pillar.idealFor}
                     </p>
                   </GlassCard>
@@ -300,7 +300,7 @@ const Services: React.FC = () => {
                       <CheckCircle2 className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${
                         item.highlight ? 'text-primary' : 'text-muted-foreground'
                       }`} />
-                      <span className="text-muted-foreground text-sm">{point}</span>
+                      <span className="text-muted-foreground text-base">{point}</span>
                     </li>
                   ))}
                 </ul>

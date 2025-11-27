@@ -169,13 +169,13 @@ const Home: React.FC = () => {
                     <point.icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">
+                <h3 className="text-2xl font-bold text-foreground mb-3">
                   {point.title}
                 </h3>
-                <p className="text-primary font-medium mb-4">
+                <p className="text-primary font-medium mb-4 text-base">
                   {point.subtitle}
                 </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-base leading-relaxed">
                   {point.description}
                 </p>
               </GlassCard>
@@ -202,10 +202,10 @@ const Home: React.FC = () => {
                     <solution.icon className="w-6 h-6 text-accent" />
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
+                <h3 className="text-xl font-bold text-foreground mb-3">
                   {solution.label}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-base">
                   {solution.description}
                 </p>
               </GlassCard>
@@ -240,7 +240,7 @@ const Home: React.FC = () => {
                   {phase.items.map((item, idx) => (
                     <li key={idx} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-sm">{item}</span>
+                      <span className="text-muted-foreground text-base">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -262,7 +262,7 @@ const Home: React.FC = () => {
                 <div className="text-4xl font-bold text-primary mb-2">
                   {metric.value}
                 </div>
-                <p className="text-muted-foreground">{metric.label}</p>
+                <p className="text-muted-foreground text-base">{metric.label}</p>
               </GlassCard>
             ))}
           </div>
@@ -270,10 +270,10 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <GlassCard key={index}>
-                <p className="text-foreground mb-4 italic leading-relaxed">
+                <p className="text-foreground text-base mb-4 italic leading-relaxed">
                   "{testimonial.quote}"
                 </p>
-                <p className="text-sm text-muted-foreground font-medium">
+                <p className="text-base text-muted-foreground font-medium">
                   — {testimonial.author}
                 </p>
               </GlassCard>

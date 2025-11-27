@@ -181,10 +181,10 @@ const About: React.FC = () => {
                     <highlight.icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
+                <h3 className="text-xl font-bold text-foreground mb-2">
                   {highlight.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-base">
                   {highlight.description}
                 </p>
               </GlassCard>
@@ -210,7 +210,7 @@ const About: React.FC = () => {
               {backgrounds.map((background, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground text-sm">{background}</span>
+                  <span className="text-muted-foreground text-base">{background}</span>
                 </li>
               ))}
             </ul>
@@ -231,10 +231,10 @@ const About: React.FC = () => {
                     <value.icon className="w-6 h-6 text-accent" />
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-3 text-center">
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-base leading-relaxed">
                   {value.description}
                 </p>
               </GlassCard>
@@ -269,7 +269,7 @@ const About: React.FC = () => {
                       <CheckCircle2 className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${
                         item.highlight ? 'text-primary' : 'text-muted-foreground'
                       }`} />
-                      <span className="text-muted-foreground text-sm">{point}</span>
+                      <span className="text-muted-foreground text-base">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -303,7 +303,7 @@ const About: React.FC = () => {
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground text-sm">{item}</span>
+                    <span className="text-muted-foreground text-base">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -317,7 +317,7 @@ const About: React.FC = () => {
                 {industries.map((industry, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle2 className="w-5 h-5 text-accent mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground text-sm">{industry}</span>
+                    <span className="text-muted-foreground text-base">{industry}</span>
                   </li>
                 ))}
               </ul>
@@ -332,7 +332,7 @@ const About: React.FC = () => {
               {stages.map((stage, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground text-sm">{stage}</span>
+                  <span className="text-muted-foreground text-base">{stage}</span>
                 </li>
               ))}
             </ul>

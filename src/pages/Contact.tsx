@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
                 {trustBadges.map((badge, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <badge.icon className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{badge.text}</span>
+                    <span className="text-base text-muted-foreground">{badge.text}</span>
                   </div>
                 ))}
               </div>
@@ -271,7 +271,7 @@ const Contact: React.FC = () => {
                   {phase.items.map((item, idx) => (
                     <li key={idx} className="flex items-start">
                       <CheckCircle2 className="w-4 h-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-sm">{item}</span>
+                      <span className="text-muted-foreground text-base">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -284,13 +284,13 @@ const Contact: React.FC = () => {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">
+                <span className="text-muted-foreground text-base">
                   If there's mutual interest, we'll send a detailed proposal within 48 hours
                 </span>
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">
+                <span className="text-muted-foreground text-base">
                   If we're not the right fit, we'll recommend other resources or partners
                 </span>
               </li>

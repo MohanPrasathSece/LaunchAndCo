@@ -267,13 +267,13 @@ const HowWeWork: React.FC = () => {
                       {phase.activities.map((activity, actIdx) => (
                         <li key={actIdx} className="flex items-start">
                           <CheckCircle2 className="w-4 h-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground text-sm">{activity}</span>
+                          <span className="text-muted-foreground text-base">{activity}</span>
                         </li>
                       ))}
                     </ul>
                     <div className="pt-4 border-t border-border">
                       <p className="text-xs font-medium text-foreground mb-1">Deliverable:</p>
-                      <p className="text-sm text-muted-foreground">{phase.deliverable}</p>
+                      <p className="text-base text-muted-foreground">{phase.deliverable}</p>
                     </div>
                   </GlassCard>
                 ))}
@@ -284,10 +284,10 @@ const HowWeWork: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {model.features.map((feature, idx) => (
                   <GlassCard key={idx} hover={false}>
-                    <h4 className="font-bold text-foreground mb-2">
+                    <h4 className="font-bold text-foreground mb-2 text-base">
                       {feature.title}
                     </h4>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-base">
                       {feature.description}
                     </p>
                   </GlassCard>
@@ -297,7 +297,7 @@ const HowWeWork: React.FC = () => {
 
             {model.useCases && (
               <GlassCard className="mb-8">
-                <h4 className="font-bold text-foreground mb-4 flex items-center">
+                <h4 className="font-bold text-foreground mb-4 flex items-center text-base">
                   <Users className="w-5 h-5 text-primary mr-2" />
                   Common Use Cases
                 </h4>
@@ -305,7 +305,7 @@ const HowWeWork: React.FC = () => {
                   {model.useCases.map((useCase, idx) => (
                     <li key={idx} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-sm">{useCase}</span>
+                      <span className="text-muted-foreground text-base">{useCase}</span>
                     </li>
                   ))}
                 </ul>
@@ -314,7 +314,7 @@ const HowWeWork: React.FC = () => {
 
             {model.scenarios && (
               <GlassCard className="mb-8">
-                <h4 className="font-bold text-foreground mb-4 flex items-center">
+                <h4 className="font-bold text-foreground mb-4 flex items-center text-base">
                   <TrendingUp className="w-5 h-5 text-primary mr-2" />
                   Common Scenarios
                 </h4>
@@ -322,7 +322,7 @@ const HowWeWork: React.FC = () => {
                   {model.scenarios.map((scenario, idx) => (
                     <li key={idx} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-sm">{scenario}</span>
+                      <span className="text-muted-foreground text-base">{scenario}</span>
                     </li>
                   ))}
                 </ul>
@@ -331,7 +331,7 @@ const HowWeWork: React.FC = () => {
 
             {model.included && (
               <GlassCard className="mb-8">
-                <h4 className="font-bold text-foreground mb-4 flex items-center">
+                <h4 className="font-bold text-foreground mb-4 flex items-center text-base">
                   <CheckCircle2 className="w-5 h-5 text-accent mr-2" />
                   What's Included
                 </h4>
@@ -339,7 +339,7 @@ const HowWeWork: React.FC = () => {
                   {model.included.map((item, idx) => (
                     <li key={idx} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-accent mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-sm">{item}</span>
+                      <span className="text-muted-foreground text-base">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -348,18 +348,18 @@ const HowWeWork: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <GlassCard>
-                <h4 className="font-bold text-foreground mb-2 flex items-center">
+                <h4 className="font-bold text-foreground mb-2 flex items-center text-base">
                   <DollarSign className="w-5 h-5 text-primary mr-2" />
                   Pricing Structure
                 </h4>
-                <p className="text-muted-foreground text-sm">{model.pricing}</p>
+                <p className="text-muted-foreground text-base">{model.pricing}</p>
               </GlassCard>
               <GlassCard>
-                <h4 className="font-bold text-foreground mb-2 flex items-center">
+                <h4 className="font-bold text-foreground mb-2 flex items-center text-base">
                   <Calendar className="w-5 h-5 text-accent mr-2" />
                   Ideal For
                 </h4>
-                <p className="text-muted-foreground text-sm">{model.idealFor}</p>
+                <p className="text-muted-foreground text-base">{model.idealFor}</p>
               </GlassCard>
             </div>
           </div>
@@ -411,8 +411,8 @@ const HowWeWork: React.FC = () => {
                     {story.model}
                   </span>
                 </div>
-                <h4 className="font-bold text-foreground mb-2">{story.client}</h4>
-                <div className="space-y-3 text-sm">
+                <h4 className="font-bold text-foreground mb-2 text-base">{story.client}</h4>
+                <div className="space-y-3 text-base">
                   <div>
                     <p className="font-medium text-muted-foreground">Challenge:</p>
                     <p className="text-muted-foreground">{story.challenge}</p>
