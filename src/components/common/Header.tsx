@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import routes from "../../routes";
 
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="xl:hidden p-2 rounded-lg hover:bg-muted transition-smooth text-foreground relative z-50"
+            className="xl:hidden p-2 rounded-lg hover:bg-muted transition-smooth text-foreground"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,37 +75,54 @@ const Header: React.FC = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="xl:hidden fixed inset-x-0 top-20 bottom-0 z-[60] flex items-start justify-center bg-background/80 backdrop-blur-md pt-6 px-4 overflow-y-auto">
-          <div className="w-full max-w-sm rounded-3xl bg-background/95 border border-primary/30 shadow-xl overflow-hidden">
-            <div className="pt-4 pb-2 flex justify-center">
-              <div className="h-1.5 w-16 rounded-full bg-primary/40" />
-            </div>
-            <div className="px-4 pb-4 space-y-2">
-              {navigation.map((item) => (
-                <button
-                  key={item.path}
-                  onClick={() => {
-                    handleNavClick(item.path);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`w-full flex items-center justify-between rounded-2xl px-4 py-3 text-base font-medium transition-smooth ${location.pathname === item.path
-                    ? "bg-primary/15 text-foreground"
-                    : "bg-transparent text-muted-foreground hover:bg-muted/40 hover:text-foreground"
-                    }`}
-                >
-                  <span>{item.name}</span>
-                  <ChevronRight size={18} className="text-muted-foreground" />
-                </button>
-              ))}
-
-              <Button
-                asChild
-                className="w-full mt-3 rounded-2xl bg-white text-gray-900 hover:bg-gray-100 shadow-lg font-semibold"
-              >
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                  Get Started
-                </Link>
-              </Button>
+        <div className="xl:hidden fixed inset-0 z-[60] pt-20">
+          <div 
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          <div className="relative flex items-center justify-center min-h-full px-4 py-8">
+            <div className="w-full max-w-sm bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
+                  <button
+                    onClick={() => setIsMenuOpen(false)}
+                    className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <X size={20} className="text-gray-600" />
+                  </button>
+                </div>
+                <nav className="space-y-2">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => {
+                        handleNavClick(item.path);
+                        setIsMenuOpen(false);
+                      }}
+                      className={`block px-4 py-3 rounded-xl text-base font-medium transition-all ${
+                        location.pathname === item.path
+                          ? "bg-primary text-primary-foreground"
+                          : "text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </nav>
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <Button
+                    asChild
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl"
+                  >
+                    <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                      Get Started
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
