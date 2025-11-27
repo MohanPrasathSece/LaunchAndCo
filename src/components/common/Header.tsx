@@ -80,20 +80,20 @@ const Header: React.FC = () => {
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMenuOpen(false)}
           />
-          <div className="relative flex items-center justify-center min-h-full px-4 py-8">
-            <div className="w-full max-w-sm bg-white rounded-2xl shadow-2xl overflow-hidden">
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
+          <div className="relative px-4 py-5">
+            <div className="w-full max-w-sm mx-auto bg-blue-900/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
+              <div className="p-5">
+                <div className="flex justify-between items-center mb-5">
+                  <h2 className="text-base font-semibold text-white">Menu</h2>
                   <button
                     onClick={() => setIsMenuOpen(false)}
-                    className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                    className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"
                     aria-label="Close menu"
                   >
-                    <X size={20} className="text-gray-600" />
+                    <X size={18} className="text-white" />
                   </button>
                 </div>
-                <nav className="space-y-2">
+                <nav className="space-y-1">
                   {navigation.map((item) => (
                     <Link
                       key={item.path}
@@ -102,20 +102,21 @@ const Header: React.FC = () => {
                         handleNavClick(item.path);
                         setIsMenuOpen(false);
                       }}
-                      className={`block px-4 py-3 rounded-xl text-base font-medium transition-all ${
+                      className={`block px-3 py-2 rounded-xl text-sm font-medium transition-all ${
                         location.pathname === item.path
-                          ? "bg-primary text-primary-foreground"
-                          : "text-gray-700 hover:bg-gray-100"
+                          ? "bg-white text-blue-900"
+                          : "text-white hover:bg-white/10"
                       }`}
                     >
                       {item.name}
                     </Link>
                   ))}
                 </nav>
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="mt-5 pt-5 border-t border-white/20">
                   <Button
                     asChild
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl"
+                    size="sm"
+                    className="w-full bg-white text-blue-900 hover:bg-gray-100 rounded-xl"
                   >
                     <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                       Get Started

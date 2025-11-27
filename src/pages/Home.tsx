@@ -100,14 +100,14 @@ const Home: React.FC = () => {
       <section className="relative min-h-screen flex items-center pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-5xl sm:text-6xl xl:text-7xl font-semibold text-foreground mb-5 leading-tight tracking-tight font-['DM_Sans']">
+            <h1 className="text-3xl sm:text-5xl xl:text-6xl font-semibold text-foreground mb-5 leading-tight tracking-tight font-['DM_Sans']">
               Transform Your
               <span className="block">Revenue Engine</span>
             </h1>
-            <p className="text-lg sm:text-2xl text-foreground/80 mb-8 leading-relaxed max-w-2xl mx-auto font-['DM_Sans']">
+            <p className="text-base sm:text-xl text-foreground/80 mb-8 leading-relaxed max-w-2xl mx-auto font-['DM_Sans']">
               Senior GTM leadership without the full-time headcount.
             </p>
-            <p className="text-base sm:text-lg text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
               We build, operate, and transfer revenue engines for startups and SMBs.
               From GTM strategy to closing deals, we are your execution partners.
             </p>
