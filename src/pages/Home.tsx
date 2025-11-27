@@ -19,20 +19,17 @@ const Home: React.FC = () => {
     {
       icon: TrendingDown,
       title: "Pipeline Stagnation",
-      subtitle: "Great product, but the sales motion isn't predictable.",
-      description: "Revenue growth plateaus despite product-market fit. Leads come in but conversion rates remain inconsistent. The sales process lacks structure and repeatability."
+      subtitle: "Great product, but the sales motion isn't predictable."
     },
     {
       icon: UserX,
       title: "Hiring Mistakes",
-      subtitle: "Wasted 6 months and $150k on a VP of Sales who didn't deliver.",
-      description: "Senior hires promise results but fail to execute. Onboarding takes months, cultural fit issues emerge, and the cost of a bad hire extends beyond salary to lost opportunity and team morale."
+      subtitle: "Wasted 6 months and $150k on a VP of Sales who didn't deliver."
     },
     {
       icon: Zap,
       title: "Scale Chaos",
-      subtitle: "Growing too fast with no systems to handle retention.",
-      description: "Customer acquisition accelerates but churn increases. No standardized onboarding, inconsistent customer success processes, and reactive firefighting replace proactive growth management."
+      subtitle: "Growing too fast with no systems to handle retention."
     }
   ];
 
@@ -63,35 +60,17 @@ const Home: React.FC = () => {
     {
       phase: "Phase 1",
       title: "Audit & Design",
-      duration: "Week 1-2",
-      items: [
-        "Analyze current revenue operations",
-        "Identify gaps and opportunities",
-        "Design custom GTM strategy",
-        "Define success metrics and KPIs"
-      ]
+      duration: "Week 1-2"
     },
     {
       phase: "Phase 2",
       title: "Build & Deploy",
-      duration: "Week 3-8",
-      items: [
-        "Implement CRM and automation systems",
-        "Launch outbound campaigns",
-        "Execute sales and marketing initiatives",
-        "Establish customer success workflows"
-      ]
+      duration: "Week 3-8"
     },
     {
       phase: "Phase 3",
       title: "Optimize & Scale",
-      duration: "Week 9+",
-      items: [
-        "Refine processes based on data",
-        "Train internal teams",
-        "Transfer knowledge and playbooks",
-        "Ongoing support and optimization"
-      ]
+      duration: "Week 9+"
     }
   ];
 
@@ -117,7 +96,7 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[image:var(--gradient-hero)] bg-fixed">
+    <div className="min-h-screen">
       <section className="relative min-h-screen flex items-center pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto">
@@ -136,7 +115,7 @@ const Home: React.FC = () => {
               <Button
                 asChild
                 size="lg"
-                className="rounded-full bg-white text-background hover:bg-white/90 text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-all font-semibold"
+                className="rounded-full bg-white text-gray-900 hover:bg-gray-100 text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-all font-semibold"
               >
                 <Link to="/how-we-work">
                   View Engagement Models
@@ -147,7 +126,7 @@ const Home: React.FC = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full glass-card border border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary/60 text-lg px-10 py-6 transition-all"
+                className="rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:border-white/30 text-lg px-10 py-6 transition-all font-semibold backdrop-blur-sm"
               >
                 <Link to="/contact">Talk to an Expert</Link>
               </Button>
@@ -175,11 +154,8 @@ const Home: React.FC = () => {
                 <h3 className="text-2xl font-bold text-foreground mb-3">
                   {point.title}
                 </h3>
-                <p className="text-primary font-medium mb-4 text-lg">
+                <p className="text-primary font-medium text-lg">
                   {point.subtitle}
-                </p>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {point.description}
                 </p>
               </GlassCard>
             ))}
@@ -239,19 +215,11 @@ const Home: React.FC = () => {
                     <p className="text-sm text-muted-foreground">{phase.duration}</p>
                   </div>
                 </div>
-                <ul className="space-y-2">
-                  {phase.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <CheckCircle2 className="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-lg">{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </GlassCard>
             ))}
           </div>
-        </div>
-      </section>
+        </div >
+      </section >
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -286,27 +254,7 @@ const Home: React.FC = () => {
       </section>
 
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 text-primary-foreground">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">
-            Ready to Build a Predictable Revenue Engine?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Book a 30-minute strategy call. No pitch, just a clear assessment of where you are and what's possible.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-white text-background hover:bg-white/90 shadow-lg hover:shadow-xl text-lg px-8 transition-all font-semibold"
-          >
-            <Link to="/contact">Book Your Strategy Call</Link>
-          </Button>
-          <p className="mt-6 text-sm opacity-75">
-            No commitment required. Completely confidential.
-          </p>
-        </div>
-      </section>
-    </div>
+    </div >
   );
 };
 

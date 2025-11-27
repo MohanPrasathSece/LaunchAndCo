@@ -432,24 +432,7 @@ const HowWeWork: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">
-            Not Sure Which Model Fits?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Book a strategy call and we'll recommend the right approach for your stage, goals, and budget.
-          </p>
-          <Button 
-            asChild 
-            size="lg"
-            className="bg-background text-foreground hover:bg-background/90 shadow-glow text-lg px-8"
-          >
-            <Link to="/contact">Book a Strategy Call</Link>
-          </Button>
-        </div>
-      </section>
-    </div>
+          </div>
   );
 };
 

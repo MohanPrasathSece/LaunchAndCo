@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary/20">
+      <section className="py-28 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-accent uppercase tracking-[0.2em] mb-4">Get in Touch</p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6">
@@ -159,7 +159,7 @@ const Contact: React.FC = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full sm:w-auto bg-white text-background hover:bg-white/90 text-lg px-8 py-6 shadow-lg font-semibold"
+                  className="w-full sm:w-auto bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-6 shadow-lg font-semibold"
                 >
                   Send message
                 </Button>

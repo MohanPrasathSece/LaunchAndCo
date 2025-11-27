@@ -128,7 +128,7 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Banner Section - First */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-foreground mb-6">
             Operators, Not Just Consultants.
@@ -250,7 +250,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-12">
             What Drives Us
@@ -275,7 +275,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-4">
             How We're Different
@@ -309,7 +309,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-12">
             Who We Work With
@@ -370,7 +370,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-12">
             Trusted by the Ecosystem
@@ -389,24 +389,7 @@ const About: React.FC = () => {
       </section>
 
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">
-            Ready to Work Together?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Let's discuss your revenue challenges and explore how we can help.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-white text-background hover:bg-white/90 shadow-lg hover:shadow-xl text-lg px-8 transition-all font-semibold"
-          >
-            <Link to="/contact">Book a Strategy Call</Link>
-          </Button>
-        </div>
-      </section>
-    </div>
+          </div>
   );
 };
 

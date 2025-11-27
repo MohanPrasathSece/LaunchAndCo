@@ -33,10 +33,12 @@ const Header: React.FC = () => {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="text-xl font-semibold tracking-tight">
-              <span className="text-foreground">Launch &amp; Close</span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src="/images/Gemini_Generated_Image_8ihek38ihek38ihe__1_-removebg-preview.png" 
+              alt="Launch & Close Logo" 
+              className="h-14 w-auto object-contain"
+            />
           </Link>
 
           <div className="hidden xl:flex items-center space-x-8">
@@ -56,7 +58,7 @@ const Header: React.FC = () => {
             <Button
               asChild
               size="sm"
-              className="rounded-full bg-white text-background hover:bg-white/90 shadow-lg hover:shadow-xl transition-all font-semibold"
+              className="rounded-full bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all font-semibold"
             >
               <Link to="/contact">Get Started</Link>
             </Button>
@@ -64,7 +66,7 @@ const Header: React.FC = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="xl:hidden p-2 rounded-lg hover:bg-muted transition-smooth"
+            className="xl:hidden p-2 rounded-lg hover:bg-muted transition-smooth text-foreground relative z-50"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -98,7 +100,7 @@ const Header: React.FC = () => {
 
               <Button
                 asChild
-                className="w-full mt-3 rounded-2xl bg-white text-background hover:bg-white/90 shadow-lg font-semibold"
+                className="w-full mt-3 rounded-2xl bg-white text-gray-900 hover:bg-gray-100 shadow-lg font-semibold"
               >
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                   Get Started
