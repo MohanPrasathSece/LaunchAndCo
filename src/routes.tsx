@@ -20,6 +20,12 @@ const routes: RouteConfig[] = [
     visible: true
   },
   {
+    name: 'About',
+    path: '/about',
+    element: <About />,
+    visible: true
+  },
+  {
     name: 'Services',
     path: '/services',
     element: <Services />,
@@ -29,12 +35,6 @@ const routes: RouteConfig[] = [
     name: 'How We Work',
     path: '/how-we-work',
     element: <HowWeWork />,
-    visible: true
-  },
-  {
-    name: 'About',
-    path: '/about',
-    element: <About />,
     visible: true
   },
   {

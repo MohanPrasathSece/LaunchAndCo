@@ -190,7 +190,7 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-hero">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-foreground mb-6">
             The 4 Pillars of Revenue Operations
@@ -204,7 +204,7 @@ const Services: React.FC = () => {
       {pillars.map((pillar, index) => (
         <section 
           key={index} 
-          className={`py-20 px-4 sm:px-6 lg:px-8 ${index % 2 === 0 ? 'bg-background' : 'bg-secondary'}`}
+          className={`py-20 px-4 sm:px-6 lg:px-8 ${index % 2 === 0 ? 'bg-black/5' : 'bg-black/10'}`}
         >
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-start">
@@ -274,7 +274,7 @@ const Services: React.FC = () => {
         </section>
       ))}
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-4">
             Why Choose Launch & Close?

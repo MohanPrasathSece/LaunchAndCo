@@ -6,95 +6,66 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "Services", path: "/services" },
-    { name: "Engagement Models", path: "/how-we-work" },
+    { name: "Home", path: "/" },
     { name: "About", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "How We Work", path: "/how-we-work" },
     { name: "Contact", path: "/contact" }
   ];
 
   return (
-    <footer className="bg-secondary border-t border-border">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div>
-            <h3 className="text-xl font-bold text-foreground mb-4">
-              Launch & Close
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Senior Revenue Leadership. Without the Headcount Risk.
-            </p>
-            <p className="text-muted-foreground text-sm">
-              We build, operate, and transfer revenue engines for startups and SMBs.
+    <footer className="bg-background/10 border-t border-border/60">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Brand + tagline */}
+          <div className="text-center md:text-left">
+            <h3 className="text-xl font-semibold text-foreground">Launch & Close</h3>
+            <p className="text-sm text-muted-foreground">
+              Senior revenue leadership, without the headcount risk.
             </p>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-smooth"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Center nav links */}
+          <nav className="flex flex-wrap justify-center gap-4 text-sm">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="text-muted-foreground hover:text-primary transition-smooth"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
 
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">
-              Contact
-            </h3>
-            <div className="space-y-3">
-              <a
-                href="mailto:hello@launchandclose.com"
-                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-smooth"
-              >
-                <Mail size={18} />
-                <span>hello@launchandclose.com</span>
-              </a>
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-smooth"
-              >
-                <Linkedin size={18} />
-                <span>LinkedIn</span>
-              </a>
-            </div>
+          {/* Social icons */}
+          <div className="flex items-center gap-3">
+            <a
+              href="mailto:hello@launchandclose.com"
+              className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-smooth"
+            >
+              <Mail size={16} />
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-smooth"
+            >
+              <Linkedin size={16} />
+            </a>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-muted-foreground text-sm">
-              © {currentYear} Launch & Close
-            </p>
-            <div className="flex space-x-6 text-sm">
-              <Link
-                to="/privacy"
-                className="text-muted-foreground hover:text-primary transition-smooth"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                to="/terms"
-                className="text-muted-foreground hover:text-primary transition-smooth"
-              >
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+        <div className="mt-6 pt-4 border-t border-border/40">
+          <p className="text-center text-xs text-muted-foreground">
+            © {currentYear} Launch & Close. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
   );
-};
+}
+;
 
 export default Footer;

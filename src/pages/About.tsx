@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { 
-  Target, 
-  Eye, 
-  Zap, 
+import {
+  Target,
+  Eye,
+  Zap,
   BookOpen,
   CheckCircle2,
   TrendingUp,
@@ -127,7 +127,8 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-hero">
+      {/* Banner Section - First */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-foreground mb-6">
             Operators, Not Just Consultants.
@@ -138,7 +139,38 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      {/* Founder Section - Second, smaller image */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left: image in container */}
+          <div className="inline-block rounded-2xl overflow-hidden">
+            <img
+              src="/images/Adrian Bio Pic.jpeg.jpg"
+              alt="Founder Adrian"
+              className="w-full h-auto max-w-sm lg:max-w-md rounded-2xl object-contain opacity-95"
+            />
+          </div>
+
+          {/* Right: bio content */}
+          <div className="space-y-6">
+            <p className="text-sm text-accent uppercase tracking-[0.2em]">Founder</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-foreground leading-tight">
+              Work directly with an operator, not a consultant.
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Our founder has built and led revenue teams across SaaS, services, and marketplaces—owning everything from zero-to-one GTM to multi-million ARR scale-ups.
+            </p>
+            <ul className="space-y-2 text-base text-muted-foreground">
+              <li>• 10+ years leading B2B revenue teams</li>
+              <li>• 3x exits, including a venture-backed SaaS company</li>
+              <li>• Built revenue engines from $0 to $10M+ ARR</li>
+              <li>• Fractional VP of Sales for 6+ companies</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-foreground mb-6 text-center">
             Why We Built Launch & Close
@@ -162,7 +194,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -251,24 +283,22 @@ const About: React.FC = () => {
           <p className="text-center text-xl text-muted-foreground mb-12">
             A new approach to revenue operations
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {comparisonPoints.map((item, index) => (
-              <GlassCard 
+              <GlassCard
                 key={index}
                 className={item.highlight ? 'border-2 border-primary' : ''}
               >
-                <h3 className={`text-xl font-bold mb-6 text-center ${
-                  item.highlight ? 'text-primary' : 'text-foreground'
-                }`}>
+                <h3 className={`text-xl font-bold mb-6 text-center ${item.highlight ? 'text-primary' : 'text-foreground'
+                  }`}>
                   {item.category}
                 </h3>
                 <ul className="space-y-3">
                   {item.points.map((point, idx) => (
                     <li key={idx} className="flex items-start">
-                      <CheckCircle2 className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${
-                        item.highlight ? 'text-primary' : 'text-muted-foreground'
-                      }`} />
+                      <CheckCircle2 className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${item.highlight ? 'text-primary' : 'text-muted-foreground'
+                        }`} />
                       <span className="text-muted-foreground text-base">{point}</span>
                     </li>
                   ))}
@@ -284,7 +314,7 @@ const About: React.FC = () => {
           <h2 className="text-4xl font-bold text-center text-foreground mb-12">
             Who We Work With
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <GlassCard>
               <h3 className="text-xl font-bold text-foreground mb-4">
@@ -358,6 +388,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
+
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">
@@ -366,10 +397,10 @@ const About: React.FC = () => {
           <p className="text-xl mb-8 opacity-90">
             Let's discuss your revenue challenges and explore how we can help.
           </p>
-          <Button 
-            asChild 
+          <Button
+            asChild
             size="lg"
-            className="bg-background text-foreground hover:bg-background/90 shadow-glow text-lg px-8"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-button hover:shadow-glow text-lg px-8 transition-all"
           >
             <Link to="/contact">Book a Strategy Call</Link>
           </Button>

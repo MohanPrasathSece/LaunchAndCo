@@ -211,7 +211,7 @@ const HowWeWork: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-hero">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-foreground mb-6">
             Flexible Engagement Models Built for Your Stage
@@ -225,7 +225,7 @@ const HowWeWork: React.FC = () => {
       {models.map((model, index) => (
         <section 
           key={index} 
-          className={`py-20 px-4 sm:px-6 lg:px-8 ${index % 2 === 0 ? 'bg-background' : 'bg-secondary'}`}
+          className={`py-20 px-4 sm:px-6 lg:px-8 ${index % 2 === 0 ? 'bg-black/5' : 'bg-black/10'}`}
         >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -366,7 +366,7 @@ const HowWeWork: React.FC = () => {
         </section>
       ))}
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-12">
             Which Model Is Right for You?
@@ -397,7 +397,7 @@ const HowWeWork: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-12">
             Real Results Across All Models
