@@ -1,4 +1,8 @@
-import SamplePage from './pages/SamplePage';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import HowWeWork from './pages/HowWeWork';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import type { ReactNode } from 'react';
 
 interface RouteConfig {
@@ -10,9 +14,34 @@ interface RouteConfig {
 
 const routes: RouteConfig[] = [
   {
-    name: 'Sample Page',
+    name: 'Home',
     path: '/',
-    element: <SamplePage />
+    element: <Home />,
+    visible: true
+  },
+  {
+    name: 'Services',
+    path: '/services',
+    element: <Services />,
+    visible: true
+  },
+  {
+    name: 'How We Work',
+    path: '/how-we-work',
+    element: <HowWeWork />,
+    visible: true
+  },
+  {
+    name: 'About',
+    path: '/about',
+    element: <About />,
+    visible: true
+  },
+  {
+    name: 'Contact',
+    path: '/contact',
+    element: <Contact />,
+    visible: true
   }
 ];
 

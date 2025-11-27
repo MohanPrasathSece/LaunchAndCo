@@ -33,7 +33,8 @@ export default {
                 foreground: 'hsl(var(--foreground))',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',
-                    foreground: 'hsl(var(--primary-foreground))'
+                    foreground: 'hsl(var(--primary-foreground))',
+                    glow: 'hsl(var(--primary-glow))'
                 },
                 secondary: {
                     DEFAULT: 'hsl(var(--secondary))',
@@ -58,30 +59,6 @@ export default {
                 card: {
                     DEFAULT: 'hsl(var(--card))',
                     foreground: 'hsl(var(--card-foreground))'
-                },
-                education: {
-                    blue: 'hsl(var(--education-blue))',
-                    green: 'hsl(var(--education-green))'
-                },
-                success: 'hsl(var(--success))',
-                warning: 'hsl(var(--warning))',
-                info: 'hsl(var(--info))',
-                sidebar: {
-                    DEFAULT: 'hsl(var(--sidebar-background))',
-                    foreground: 'hsl(var(--sidebar-foreground))',
-                    primary: 'hsl(var(--sidebar-primary))',
-                    'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-                    accent: 'hsl(var(--sidebar-accent))',
-                    'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-                    border: 'hsl(var(--sidebar-border))',
-                    ring: 'hsl(var(--sidebar-ring))'
-                },
-                chart: {
-                    '1': 'hsl(var(--chart-1))',
-                    '2': 'hsl(var(--chart-2))',
-                    '3': 'hsl(var(--chart-3))',
-                    '4': 'hsl(var(--chart-4))',
-                    '5': 'hsl(var(--chart-5))'
                 }
             },
             borderRadius: {
@@ -91,12 +68,14 @@ export default {
             },
             backgroundImage: {
                 'gradient-primary': 'var(--gradient-primary)',
-                'gradient-card': 'var(--gradient-card)',
-                'gradient-background': 'var(--gradient-background)'
+                'gradient-accent': 'var(--gradient-accent)',
+                'gradient-glass': 'var(--gradient-glass)',
+                'gradient-hero': 'var(--gradient-hero)'
             },
             boxShadow: {
                 card: 'var(--shadow-card)',
-                hover: 'var(--shadow-hover)'
+                hover: 'var(--shadow-hover)',
+                glow: 'var(--shadow-glow)'
             },
             keyframes: {
                 'accordion-down': {
@@ -134,13 +113,22 @@ export default {
                         opacity: '1',
                         transform: 'translateX(0)'
                     }
+                },
+                'glow-pulse': {
+                    '0%, 100%': {
+                        boxShadow: '0 0 20px rgba(0, 102, 255, 0.3)'
+                    },
+                    '50%': {
+                        boxShadow: '0 0 40px rgba(0, 102, 255, 0.5)'
+                    }
                 }
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'fade-in': 'fade-in 0.5s ease-out',
-                'slide-in': 'slide-in 0.5s ease-out'
+                'slide-in': 'slide-in 0.5s ease-out',
+                'glow-pulse': 'glow-pulse 2s ease-in-out infinite'
             }
         }
     },
