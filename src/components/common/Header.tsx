@@ -37,7 +37,7 @@ const Header: React.FC = () => {
             <img
               src="/images/Gemini_Generated_Image_8ihek38ihek38ihe__1_-removebg-preview.png"
               alt="Launch & Close Logo"
-              className="h-14 sm:h-14 w-auto object-contain"
+              className="h-12 sm:h-14 w-auto object-contain"
             />
           </Link>
 
