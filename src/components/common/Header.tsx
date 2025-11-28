@@ -33,11 +33,11 @@ const Header: React.FC = () => {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
-          <Link to="/" className="flex items-center group z-50 relative">
+          <Link to="/" className="flex items-center group z-50 relative" style={{ fontFamily: 'Poppins, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>
             <img
               src="/images/Gemini_Generated_Image_8ihek38ihek38ihe__1_-removebg-preview.png"
               alt="Launch & Close Logo"
-              className="h-8 sm:h-14 w-auto object-contain"
+              className="h-16 sm:h-14 w-auto object-contain"
             />
           </Link>
 
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
             onClick={() => setIsMenuOpen(false)}
           />
           <div className="absolute top-24 left-4 right-4 z-50 xl:hidden animate-in slide-in-from-top-5 fade-in zoom-in-95 duration-200">
-            <div className="bg-black/95 backdrop-blur-3xl border border-white/10 rounded-3xl p-6 shadow-2xl overflow-hidden">
+            <div className="bg-black/95 backdrop-blur-3xl border border-white/10 rounded-3xl p-6 shadow-2xl overflow-hidden" style={{ fontFamily: 'Poppins, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>
               <nav className="flex flex-col space-y-2">
                 {navigation.map((item) => (
                   <Link
