@@ -128,7 +128,7 @@ Launch & Close Premium Design System - Space Theme with Glassmorphism
 
   body {
     @apply text-foreground;
-    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 1.06rem;
     line-height: 1.75;
     /* Simplified background: Subtle dark depth at bottom only */

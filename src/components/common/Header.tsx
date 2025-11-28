@@ -47,7 +47,7 @@ const Header: React.FC = () => {
                 key={item.path}
                 to={item.path}
                 onClick={() => handleNavClick(item.path)}
-                className={`text-sm font-medium px-4 py-2 rounded-full transition-smooth ${location.pathname === item.path
+                className={`text-sm font-light px-4 py-2 rounded-full transition-smooth uppercase tracking-wide ${location.pathname === item.path
                   ? "text-foreground bg-muted/40"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/20"
                   }`}

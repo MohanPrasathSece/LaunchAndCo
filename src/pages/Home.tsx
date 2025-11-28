@@ -97,45 +97,52 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-black/10">
+      <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-black/50 pb-0">
+        {/* Moon-like semi-circle background */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] sm:w-[900px] md:w-[1200px] h-[300px] sm:h-[450px] md:h-[600px] rounded-t-full bg-gradient-to-t from-blue-500/30 via-blue-400/20 to-transparent blur-2xl"></div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[750px] md:w-[1000px] h-[250px] sm:h-[375px] md:h-[500px] rounded-t-full bg-gradient-to-t from-blue-600/40 via-blue-500/25 to-transparent blur-xl"></div>
         <div className="relative z-10 max-w-6xl mx-auto text-center px-4 sm:px-6">
-          <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-8 leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          <h1 className="text-4xl md:text-7xl font-bold text-white tracking-tight mb-6 md:mb-8 leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Transform Your <br />
             <span className="text-white">
               Revenue Engine
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          <p className="text-base md:text-xl text-blue-100 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Senior GTM leadership without the full-time headcount. We build, operate, and transfer revenue engines for startups and SMBs.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 justify-center w-full">
             <Button
               asChild
               size="lg"
-              className="rounded-full bg-white text-slate-900 hover:bg-slate-100 text-lg px-8 py-6 shadow-lg transition-all duration-300 font-semibold hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 text-sm md:text-lg px-6 py-3 md:px-8 md:py-6 shadow-lg transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[280px] sm:max-w-none"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
-              <Link to="/how-we-work">
+              <Link to="/how-we-work" className="flex items-center justify-center">
                 View Engagement Models
-                <ArrowRight className="ml-2" size={20} />
+                <ArrowRight className="ml-2" size={16} />
               </Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full bg-white text-slate-900 hover:bg-slate-100 border border-white text-lg px-8 py-6 transition-all duration-300 font-semibold hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 border border-white text-sm md:text-lg px-6 py-3 md:px-8 md:py-6 transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[280px] sm:max-w-none"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
-              <Link to="/contact">Talk to an Expert</Link>
+              <Link to="/contact" className="flex items-center justify-center">Talk to an Expert</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Moon continuation - expanding to sides */}
+        <div className="absolute top-0 left-0 right-0 w-full h-[400px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-500/25 via-blue-400/15 to-transparent blur-3xl"></div>
+        <div className="absolute top-0 left-0 right-0 w-full h-[300px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/35 via-blue-500/20 to-transparent blur-2xl"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">
             Why Founders Get Stuck
           </h2>
