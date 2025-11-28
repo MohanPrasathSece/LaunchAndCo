@@ -6,6 +6,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendEmail } from "@/services/emailService";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { CheckCircle2 } from "lucide-react";
 
 const Contact: React.FC = () => {
   const { toast } = useToast();
@@ -17,19 +27,45 @@ const Contact: React.FC = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out! We'll respond within 24 hours.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+
+    try {
+      await sendEmail({
+        name: formData.name,
+        email: formData.email,
+        subject: `Contact from ${formData.company}`,
+        message: `Phone: ${formData.phone}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
+      });
+
+      // Show confirmation dialog
+      setShowConfirmation(true);
+
+      toast({
+        title: "Message Sent!",
+        description: "Thanks for reaching out! We'll respond within 24 hours.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -134,9 +170,10 @@ const Contact: React.FC = () => {
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={isSubmitting}
                   className="w-full sm:w-auto bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-6 shadow-lg font-semibold"
                 >
-                  Send message
+                  {isSubmitting ? "Sending..." : "Send message"}
                 </Button>
               </div>
             </form>
@@ -231,7 +268,32 @@ const Contact: React.FC = () => {
           </p>
         </div>
       </section>
-    </div>
+      <Dialog open={showConfirmation} onOpenChange={setShowConfirmation}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                <CheckCircle2 className="h-6 w-6 text-green-600" />
+              </div>
+            </div>
+            <DialogTitle className="text-center text-2xl">Message Sent!</DialogTitle>
+            <DialogDescription className="text-center text-lg pt-2">
+              Thanks for reaching out! We've received your message and will get back to you within 24 hours.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="sm:justify-center">
+            <Button
+              type="button"
+              variant="secondary"
+              className="w-full sm:w-auto min-w-[120px]"
+              onClick={() => setShowConfirmation(false)}
+            >
+              Close
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </div >
   );
 }
   ;

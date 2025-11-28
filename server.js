@@ -22,7 +22,7 @@ const emailSchema = z.object({
 });
 
 // Create SMTP transporter
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp.gmail.com',
   port: parseInt(process.env.SMTP_PORT || '587'),
   secure: false, // true for 465, false for other ports
@@ -44,28 +44,50 @@ app.post('/api/send-email', async (req, res) => {
       to: process.env.RECIPIENT_EMAIL || process.env.SMTP_USER,
       subject: `New Contact Form: ${validatedData.subject}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
-            New Contact Form Submission
-          </h2>
-          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 10px 0;"><strong>Name:</strong> ${validatedData.name}</p>
-            <p style="margin: 10px 0;"><strong>Email:</strong> ${validatedData.email}</p>
-            <p style="margin: 10px 0;"><strong>Subject:</strong> ${validatedData.subject}</p>
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <div style="background-color: #000000; padding: 20px; text-align: center;">
+            <h2 style="color: #ffffff; margin: 0; font-weight: 600; letter-spacing: 1px;">New Lead Received</h2>
           </div>
-          <div style="background: #fff; padding: 20px; border: 1px solid #dee2e6; border-radius: 8px;">
-            <h3 style="color: #495057; margin-top: 0;">Message:</h3>
-            <p style="line-height: 1.6; color: #6c757d;">${validatedData.message}</p>
+          
+          <div style="padding: 30px;">
+            <p style="color: #666; font-size: 16px; margin-bottom: 25px;">You have received a new inquiry from your website contact form. Here are the details:</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
+              <tbody>
+                <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 12px 0; color: #888; width: 120px; font-weight: 500;">Name</td>
+                  <td style="padding: 12px 0; color: #333; font-weight: 600;">${validatedData.name}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 12px 0; color: #888; font-weight: 500;">Email</td>
+                  <td style="padding: 12px 0; color: #333; font-weight: 600;">
+                    <a href="mailto:${validatedData.email}" style="color: #007bff; text-decoration: none;">${validatedData.email}</a>
+                  </td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 12px 0; color: #888; font-weight: 500;">Subject</td>
+                  <td style="padding: 12px 0; color: #333; font-weight: 600;">${validatedData.subject}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #007bff;">
+              <h3 style="margin-top: 0; color: #444; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Message Content</h3>
+              <p style="color: #555; line-height: 1.6; margin-bottom: 0; white-space: pre-wrap;">${validatedData.message}</p>
+            </div>
           </div>
-          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; text-align: center; color: #6c757d; font-size: 12px;">
-            <p>This email was sent from the Launch & Close contact form</p>
+
+          <div style="background-color: #f8f9fa; padding: 15px; text-align: center; border-top: 1px solid #eee;">
+            <p style="margin: 0; color: #999; font-size: 12px;">Sent from Launch & Close Website</p>
           </div>
         </div>
       `,
     };
 
     // Send email
+    console.log(`Attempting to send email | From: ${mailOptions.from} | To: ${mailOptions.to}`);
     await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully');
 
     // Send confirmation email to the user
     const confirmationOptions = {
@@ -91,27 +113,30 @@ app.post('/api/send-email', async (req, res) => {
       `,
     };
 
+    console.log(`Attempting to send confirmation email | From: ${confirmationOptions.from} | To: ${confirmationOptions.to}`);
     await transporter.sendMail(confirmationOptions);
+    console.log('Confirmation email sent successfully');
 
-    res.status(200).json({ 
-      success: true, 
-      message: 'Email sent successfully!' 
+    res.status(200).json({
+      success: true,
+      message: 'Email sent successfully!'
     });
 
   } catch (error) {
     console.error('Error sending email:', error);
-    
+    console.log('Email sending failed');
+
     if (error instanceof z.ZodError) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Validation error', 
-        errors: error.errors 
+      return res.status(400).json({
+        success: false,
+        message: 'Validation error',
+        errors: error.errors
       });
     }
 
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to send email. Please try again later.' 
+    res.status(500).json({
+      success: false,
+      message: 'Failed to send email. Please try again later.'
     });
   }
 });
