@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { 
-  Target, 
-  TrendingUp, 
-  Users, 
+import {
+  Target,
+  TrendingUp,
+  Users,
   GraduationCap,
   CheckCircle2,
   FileText,
@@ -190,9 +190,9 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/10 min-h-[50vh] flex flex-col justify-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             The 4 Pillars of Revenue Operations
           </h1>
           <p className="text-xl text-muted-foreground">
@@ -202,8 +202,8 @@ const Services: React.FC = () => {
       </section>
 
       {pillars.map((pillar, index) => (
-        <section 
-          key={index} 
+        <section
+          key={index}
           className={`py-20 px-4 sm:px-6 lg:px-8 ${index % 2 === 0 ? 'bg-black/5' : 'bg-black/10'}`}
         >
           <div className="max-w-7xl mx-auto">
@@ -215,7 +215,7 @@ const Services: React.FC = () => {
                       <pillar.icon className="w-8 h-8 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-foreground">
+                      <h3 className="text-xl sm:text-2xl font-bold text-foreground">
                         {pillar.title}
                       </h3>
                       <p className="text-primary font-medium">{pillar.subtitle}</p>
@@ -224,7 +224,7 @@ const Services: React.FC = () => {
                   <p className="text-foreground text-lg mb-6 leading-relaxed">
                     {pillar.description}
                   </p>
-                  
+
                   <div className="space-y-6">
                     {pillar.content.map((item, idx) => (
                       <div key={idx}>
@@ -276,30 +276,28 @@ const Services: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">
             Why Choose Launch & Close?
           </h2>
           <p className="text-center text-xl text-muted-foreground mb-12">
             Operators, Not Consultants
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {comparison.map((item, index) => (
-              <GlassCard 
+              <GlassCard
                 key={index}
                 className={item.highlight ? 'border-2 border-primary' : ''}
               >
-                <h3 className={`text-xl font-bold mb-6 text-center ${
-                  item.highlight ? 'text-primary' : 'text-foreground'
-                }`}>
+                <h3 className={`text-xl font-bold mb-6 text-center ${item.highlight ? 'text-primary' : 'text-foreground'
+                  }`}>
                   {item.category}
                 </h3>
                 <ul className="space-y-3">
                   {item.points.map((point, idx) => (
                     <li key={idx} className="flex items-start">
-                      <CheckCircle2 className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${
-                        item.highlight ? 'text-primary' : 'text-muted-foreground'
-                      }`} />
+                      <CheckCircle2 className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${item.highlight ? 'text-primary' : 'text-muted-foreground'
+                        }`} />
                       <span className="text-muted-foreground text-base">{point}</span>
                     </li>
                   ))}
@@ -310,7 +308,7 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-          </div>
+    </div>
   );
 };
 

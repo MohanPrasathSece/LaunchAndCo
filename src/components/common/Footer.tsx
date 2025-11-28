@@ -19,7 +19,11 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand + tagline */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-semibold text-foreground">Launch & Close</h3>
+            <img
+              src="/images/Gemini_Generated_Image_8ihek38ihek38ihe__1_-removebg-preview.png"
+              alt="Launch & Close"
+              className="h-12 w-auto mx-auto md:mx-0 mb-4"
+            />
             <p className="text-sm text-muted-foreground">
               Senior revenue leadership, without the headcount risk.
             </p>
@@ -66,6 +70,6 @@ const Footer: React.FC = () => {
     </footer>
   );
 }
-;
+  ;
 
 export default Footer;

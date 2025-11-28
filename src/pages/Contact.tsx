@@ -4,13 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -19,9 +12,8 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
-    companyUrl: "",
-    service: "",
     message: ""
   });
 
@@ -34,9 +26,8 @@ const Contact: React.FC = () => {
     setFormData({
       name: "",
       email: "",
+      phone: "",
       company: "",
-      companyUrl: "",
-      service: "",
       message: ""
     });
   };
@@ -48,10 +39,10 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-28 px-4 sm:px-6 lg:px-8">
+      <section className="py-28 px-4 sm:px-6 lg:px-8 min-h-[50vh] flex flex-col justify-center">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-accent uppercase tracking-[0.2em] mb-4">Get in Touch</p>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             Let's Start a Conversation
           </h1>
           <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -88,6 +79,20 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
+                  <Label htmlFor="phone" className="text-base">Phone Number *</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => handleChange("phone", e.target.value)}
+                    required
+                    className="mt-2 text-base h-12"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
                   <Label htmlFor="email" className="text-base">Email *</Label>
                   <Input
                     id="email"
@@ -98,47 +103,17 @@ const Contact: React.FC = () => {
                     className="mt-2 text-base h-12"
                   />
                 </div>
-              </div>
 
-              <div>
-                <Label htmlFor="company" className="text-base">Company name *</Label>
-                <Input
-                  id="company"
-                  value={formData.company}
-                  onChange={(e) => handleChange("company", e.target.value)}
-                  required
-                  className="mt-2 text-base h-12"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="companyUrl" className="text-base">Company URL</Label>
-                <Input
-                  id="companyUrl"
-                  type="url"
-                  value={formData.companyUrl}
-                  onChange={(e) => handleChange("companyUrl", e.target.value)}
-                  className="mt-2 text-base h-12"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="service" className="text-base">What do you need help with?</Label>
-                <Select
-                  value={formData.service}
-                  onValueChange={(value) => handleChange("service", value)}
-                >
-                  <SelectTrigger className="mt-2 text-base h-12">
-                    <SelectValue placeholder="Select a focus area" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="consulting">GTM & revenue strategy</SelectItem>
-                    <SelectItem value="sales">Sales & pipeline execution</SelectItem>
-                    <SelectItem value="cs">Customer success & retention</SelectItem>
-                    <SelectItem value="training">Team training & enablement</SelectItem>
-                    <SelectItem value="unsure">Not sure yet</SelectItem>
-                  </SelectContent>
-                </Select>
+                <div>
+                  <Label htmlFor="company" className="text-base">Company name *</Label>
+                  <Input
+                    id="company"
+                    value={formData.company}
+                    onChange={(e) => handleChange("company", e.target.value)}
+                    required
+                    className="mt-2 text-base h-12"
+                  />
+                </div>
               </div>
 
               <div>
@@ -171,7 +146,7 @@ const Contact: React.FC = () => {
           <div className="space-y-8">
             <GlassCard>
               <div className="mb-8">
-                <h2 className="text-3xl font-semibold text-foreground mb-3">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-3">
                   Contact Information
                 </h2>
                 <p className="text-lg text-muted-foreground">
@@ -248,7 +223,7 @@ const Contact: React.FC = () => {
           <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
             <Clock className="text-primary" size={28} />
           </div>
-          <h3 className="text-3xl font-semibold text-foreground mb-4">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-foreground mb-4">
             Quick Response Guaranteed
           </h3>
           <p className="text-muted-foreground text-xl leading-relaxed">

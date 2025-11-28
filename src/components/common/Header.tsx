@@ -28,16 +28,16 @@ const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${isScrolled
         ? 'bg-background/80 backdrop-blur-xl border-b border-border/60'
-        : 'bg-background/40 backdrop-blur-xl border-b border-transparent'
+        : 'bg-transparent border-b border-transparent'
         }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center group">
-            <img 
-              src="/images/Gemini_Generated_Image_8ihek38ihek38ihe__1_-removebg-preview.png" 
-              alt="Launch & Close Logo" 
-              className="h-14 w-auto object-contain"
+        <div className="flex justify-between items-center h-16 md:h-20">
+          <Link to="/" className="flex items-center group z-50 relative">
+            <img
+              src="/images/Gemini_Generated_Image_8ihek38ihek38ihe__1_-removebg-preview.png"
+              alt="Launch & Close Logo"
+              className="h-8 sm:h-14 w-auto object-contain"
             />
           </Link>
 
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="xl:hidden p-2 rounded-lg hover:bg-muted transition-smooth text-foreground"
+            className="xl:hidden p-2 rounded-full hover:bg-white/10 transition-smooth text-foreground z-50 relative"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,58 +75,45 @@ const Header: React.FC = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="xl:hidden fixed inset-0 z-[60] pt-20">
-          <div 
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        <>
+          <div
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 xl:hidden"
             onClick={() => setIsMenuOpen(false)}
           />
-          <div className="relative px-4 py-5">
-            <div className="w-full max-w-sm mx-auto bg-blue-900/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
-              <div className="p-5">
-                <div className="flex justify-between items-center mb-5">
-                  <h2 className="text-base font-semibold text-white">Menu</h2>
-                  <button
-                    onClick={() => setIsMenuOpen(false)}
-                    className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"
-                    aria-label="Close menu"
-                  >
-                    <X size={18} className="text-white" />
-                  </button>
-                </div>
-                <nav className="space-y-1">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      onClick={() => {
-                        handleNavClick(item.path);
-                        setIsMenuOpen(false);
-                      }}
-                      className={`block px-3 py-2 rounded-xl text-sm font-medium transition-all ${
-                        location.pathname === item.path
-                          ? "bg-white text-blue-900"
-                          : "text-white hover:bg-white/10"
+          <div className="absolute top-24 left-4 right-4 z-50 xl:hidden animate-in slide-in-from-top-5 fade-in zoom-in-95 duration-200">
+            <div className="bg-black/95 backdrop-blur-3xl border border-white/10 rounded-3xl p-6 shadow-2xl overflow-hidden">
+              <nav className="flex flex-col space-y-2">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => {
+                      handleNavClick(item.path);
+                      setIsMenuOpen(false);
+                    }}
+                    className={`text-lg font-medium py-3 px-4 rounded-xl transition-all ${location.pathname === item.path
+                      ? "bg-white/10 text-white"
+                      : "text-white/70 hover:text-white hover:bg-white/5"
                       }`}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </nav>
-                <div className="mt-5 pt-5 border-t border-white/20">
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <div className="pt-4 mt-2 border-t border-white/10">
                   <Button
                     asChild
-                    size="sm"
-                    className="w-full bg-white text-blue-900 hover:bg-gray-100 rounded-xl"
+                    size="lg"
+                    className="w-full rounded-xl bg-white text-black hover:bg-gray-200 font-bold shadow-lg"
                   >
                     <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                       Get Started
                     </Link>
                   </Button>
                 </div>
-              </div>
+              </nav>
             </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

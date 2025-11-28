@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { 
-  Layers, 
-  Clock, 
+import {
+  Layers,
+  Clock,
   Zap,
   CheckCircle2,
   TrendingUp,
@@ -211,9 +211,9 @@ const HowWeWork: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/10 min-h-[50vh] flex flex-col justify-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             Flexible Engagement Models Built for Your Stage
           </h1>
           <p className="text-xl text-muted-foreground">
@@ -223,8 +223,8 @@ const HowWeWork: React.FC = () => {
       </section>
 
       {models.map((model, index) => (
-        <section 
-          key={index} 
+        <section
+          key={index}
           className={`py-20 px-4 sm:px-6 lg:px-8 ${index % 2 === 0 ? 'bg-black/5' : 'bg-black/10'}`}
         >
           <div className="max-w-7xl mx-auto">
@@ -234,7 +234,7 @@ const HowWeWork: React.FC = () => {
                   <model.icon className="w-12 h-12 text-primary" />
                 </div>
               </div>
-              <h2 className="text-4xl font-bold text-foreground mb-2">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
                 {model.title}
               </h2>
               <p className="text-xl text-primary font-medium mb-4">
@@ -368,10 +368,10 @@ const HowWeWork: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
             Which Model Is Right for You?
           </h2>
-          
+
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -399,10 +399,10 @@ const HowWeWork: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
             Real Results Across All Models
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {successStories.map((story, index) => (
               <GlassCard key={index}>
@@ -432,7 +432,7 @@ const HowWeWork: React.FC = () => {
         </div>
       </section>
 
-          </div>
+    </div>
   );
 };
 

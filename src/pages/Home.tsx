@@ -97,47 +97,46 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative min-h-screen flex items-center pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl sm:text-5xl xl:text-6xl font-semibold text-foreground mb-5 leading-tight tracking-tight font-['DM_Sans']">
-              Transform Your
-              <span className="block">Revenue Engine</span>
-            </h1>
-            <p className="text-base sm:text-xl text-foreground/80 mb-8 leading-relaxed max-w-2xl mx-auto font-['DM_Sans']">
-              Senior GTM leadership without the full-time headcount.
-            </p>
-            <p className="text-sm sm:text-base text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-              We build, operate, and transfer revenue engines for startups and SMBs.
-              From GTM strategy to closing deals, we are your execution partners.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="rounded-full bg-white text-gray-900 hover:bg-gray-100 text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-all font-semibold"
-              >
-                <Link to="/how-we-work">
-                  View Engagement Models
-                  <ArrowRight className="ml-2" size={20} />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:border-white/30 text-lg px-10 py-6 transition-all font-semibold backdrop-blur-sm"
-              >
-                <Link to="/contact">Talk to an Expert</Link>
-              </Button>
-            </div>
+      <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-black/10">
+        <div className="relative z-10 max-w-6xl mx-auto text-center px-4 sm:px-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-8 leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            Transform Your <br />
+            <span className="text-white">
+              Revenue Engine
+            </span>
+          </h1>
+          <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            Senior GTM leadership without the full-time headcount. We build, operate, and transfer revenue engines for startups and SMBs.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full bg-white text-slate-900 hover:bg-slate-100 text-lg px-8 py-6 shadow-lg transition-all duration-300 font-semibold hover:scale-105 active:scale-95"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              <Link to="/how-we-work">
+                View Engagement Models
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full bg-white text-slate-900 hover:bg-slate-100 border border-white text-lg px-8 py-6 transition-all duration-300 font-semibold hover:scale-105 active:scale-95"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              <Link to="/contact">Talk to an Expert</Link>
+            </Button>
           </div>
         </div>
       </section>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">
             Why Founders Get Stuck
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -151,7 +150,7 @@ const Home: React.FC = () => {
                     <point.icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
                   {point.title}
                 </h3>
                 <p className="text-primary font-medium text-lg">
@@ -195,7 +194,7 @@ const Home: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">
             From Strategy to Execution in 3 Phases
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -230,7 +229,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {metrics.map((metric, index) => (
               <GlassCard key={index} className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">
+                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
                   {metric.value}
                 </div>
                 <p className="text-muted-foreground text-lg">{metric.label}</p>

@@ -128,9 +128,9 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Banner Section - First */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 min-h-[50vh] flex flex-col justify-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             Operators, Not Just Consultants.
           </h1>
           <p className="text-xl text-muted-foreground">
@@ -154,7 +154,7 @@ const About: React.FC = () => {
           {/* Right: bio content */}
           <div className="space-y-6">
             <p className="text-sm text-accent uppercase tracking-[0.2em]">Founder</p>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-foreground leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground leading-tight">
               Work directly with an operator, not a consultant.
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -172,7 +172,7 @@ const About: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 text-center">
             Why We Built Launch & Close
           </h2>
           <GlassCard>
@@ -197,7 +197,7 @@ const About: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
               Meet the Operators
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -226,7 +226,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
             {achievements.map((achievement, index) => (
               <GlassCard key={index} className="text-center" hover={false}>
-                <div className="text-3xl font-bold text-primary mb-1">
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">
                   {achievement.value}
                 </div>
                 <p className="text-sm text-muted-foreground">{achievement.label}</p>
@@ -252,7 +252,7 @@ const About: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
             What Drives Us
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
@@ -311,7 +311,7 @@ const About: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
             Who We Work With
           </h2>
 
@@ -372,7 +372,7 @@ const About: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
             Trusted by the Ecosystem
           </h2>
           <GlassCard>
@@ -389,7 +389,7 @@ const About: React.FC = () => {
       </section>
 
 
-          </div>
+    </div>
   );
 };
 
