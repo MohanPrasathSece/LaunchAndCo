@@ -96,7 +96,7 @@ const Home: React.FC = () => {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 text-sm md:text-base px-4 py-2 md:px-6 md:py-4 shadow-lg transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[200px] sm:max-w-none"
+              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 text-base md:text-base px-6 py-3 md:px-6 md:py-4 shadow-lg transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[280px] sm:max-w-none"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               <Link to="/how-we-work" className="flex items-center justify-center">
@@ -108,7 +108,7 @@ const Home: React.FC = () => {
               asChild
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 border border-white text-sm md:text-base px-4 py-2 md:px-6 md:py-4 transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[200px] sm:max-w-none"
+              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 border border-white text-base md:text-base px-6 py-3 md:px-6 md:py-4 transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[280px] sm:max-w-none"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               <Link to="/contact" className="flex items-center justify-center">Talk to an Expert</Link>
@@ -347,7 +347,7 @@ const Home: React.FC = () => {
             <Button
               asChild
               size="lg"
-              className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+              className="bg-white text-slate-900 hover:bg-slate-100 px-6 py-3 md:px-8 md:py-6 text-base md:text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
             >
               <Link to="/contact" className="flex items-center">
                 Schedule a Free Consultation
@@ -358,7 +358,7 @@ const Home: React.FC = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+              className="border-2 border-white text-white hover:bg-white/10 px-6 py-3 md:px-8 md:py-6 text-base md:text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
             >
               <Link to="/how-we-work" className="flex items-center">
                 Learn How We Work

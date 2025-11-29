@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -34,9 +35,9 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-16 md:h-20">
           <Link to="/" className="flex items-center group z-50 relative" style={{ fontFamily: 'Poppins, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>
             <img
-              src="/images/Gemini_Generated_Image_8ihek38ihek38ihe__1_-removebg-preview.png"
+              src="/images/logo/Gemini_Generated_Image_sss5a4sss5a4sss5-removebg-preview.png"
               alt="Launch & Close Logo"
-              className="h-12 sm:h-14 w-auto object-contain"
+              className="h-16 sm:h-18 w-auto object-contain"
             />
           </Link>
 
@@ -186,13 +187,23 @@ const Header: React.FC = () => {
                   Home
                 </Link>
                 
+                {/* Mobile Services Dropdown */}
                 <div className="py-2">
-                  <div className="text-white/70 px-4 py-2 font-medium">Services</div>
-                  <div className="pl-4 space-y-1">
+                  <button
+                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    className="w-full text-white/70 px-4 py-2 font-medium flex items-center justify-between hover:text-white transition-colors"
+                  >
+                    Services
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <div className={`pl-4 space-y-1 transition-all duration-200 overflow-hidden ${
+                    isMobileServicesOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
                     <Link
                       to="/services#strategy"
                       onClick={() => {
                         setIsMenuOpen(false);
+                        setIsMobileServicesOpen(false);
                       }}
                       className="block text-white/60 hover:text-white hover:bg-white/5 py-2 px-4 rounded-lg transition-all"
                     >
@@ -202,6 +213,7 @@ const Header: React.FC = () => {
                       to="/services#execution"
                       onClick={() => {
                         setIsMenuOpen(false);
+                        setIsMobileServicesOpen(false);
                       }}
                       className="block text-white/60 hover:text-white hover:bg-white/5 py-2 px-4 rounded-lg transition-all"
                     >
@@ -211,6 +223,7 @@ const Header: React.FC = () => {
                       to="/services#tech"
                       onClick={() => {
                         setIsMenuOpen(false);
+                        setIsMobileServicesOpen(false);
                       }}
                       className="block text-white/60 hover:text-white hover:bg-white/5 py-2 px-4 rounded-lg transition-all"
                     >

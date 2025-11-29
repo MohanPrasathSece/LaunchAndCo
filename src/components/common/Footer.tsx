@@ -20,9 +20,9 @@ const Footer: React.FC = () => {
           {/* Brand + tagline */}
           <div className="text-center md:text-left">
             <img
-              src="/images/Gemini_Generated_Image_8ihek38ihek38ihe__1_-removebg-preview.png"
+              src="/images/logo/Gemini_Generated_Image_sss5a4sss5a4sss5-removebg-preview.png"
               alt="Launch & Close"
-              className="h-12 w-auto mx-auto md:mx-0 mb-4"
+              className="h-16 w-auto mx-auto md:mx-0 mb-4"
             />
             <p className="text-sm text-muted-foreground">
               Senior revenue leadership, without the headcount risk.
