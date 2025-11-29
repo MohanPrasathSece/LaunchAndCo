@@ -201,6 +201,59 @@ const Services: React.FC = () => {
         </div>
       </section>
 
+      {/* Service Images Showcase */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <GlassCard className="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop&q=80"
+                alt="Business strategy consulting and revenue planning session"
+                className="w-full h-[250px] object-cover rounded-t-lg"
+                loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-bold text-foreground mb-2">Strategic Consulting</h3>
+                <p className="text-sm text-muted-foreground">Expert guidance for your revenue engine</p>
+              </div>
+            </GlassCard>
+            <GlassCard className="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop&q=80"
+                alt="Professional sales team executing revenue generation strategies"
+                className="w-full h-[250px] object-cover rounded-t-lg"
+                loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-bold text-foreground mb-2">Sales Execution</h3>
+                <p className="text-sm text-muted-foreground">Hands-on revenue generation and pipeline management</p>
+              </div>
+            </GlassCard>
+            <GlassCard className="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=600&fit=crop&q=80"
+                alt="Customer success manager supporting client growth and retention"
+                className="w-full h-[250px] object-cover rounded-t-lg"
+                loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-bold text-foreground mb-2">Customer Success</h3>
+                <p className="text-sm text-muted-foreground">Maximize retention and customer lifetime value</p>
+              </div>
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
       {pillars.map((pillar, index) => (
         <section
           key={index}

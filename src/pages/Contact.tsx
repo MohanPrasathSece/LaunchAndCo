@@ -256,16 +256,36 @@ const Contact: React.FC = () => {
 
       {/* Response Time Banner */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
-            <Clock className="text-primary" size={28} />
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
+                <Clock className="text-primary" size={28} />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-semibold text-foreground mb-4">
+                Quick Response Guaranteed
+              </h3>
+              <p className="text-muted-foreground text-xl leading-relaxed mb-4">
+                We respond to all inquiries within 24 hours. Usually much faster.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Our team is ready to understand your unique challenges and provide tailored solutions that drive real revenue growth.
+              </p>
+            </div>
+            <div className="order-1 lg:order-2">
+              <GlassCard className="overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=800&q=80"
+                  alt="Professional customer support team ready to assist with revenue operations"
+                  className="w-full h-[300px] object-cover rounded-lg"
+                  loading="lazy"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              </GlassCard>
+            </div>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-semibold text-foreground mb-4">
-            Quick Response Guaranteed
-          </h3>
-          <p className="text-muted-foreground text-xl leading-relaxed">
-            We respond to all inquiries within 24 hours. Usually much faster.
-          </p>
         </div>
       </section>
       <Dialog open={showConfirmation} onOpenChange={setShowConfirmation}>

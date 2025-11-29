@@ -222,6 +222,36 @@ const HowWeWork: React.FC = () => {
         </div>
       </section>
 
+      {/* Process Visualization Image */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-3xl font-bold text-foreground mb-4">
+                Proven Methodologies, Tailored to Your Needs
+              </h3>
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                Our engagement models are designed based on years of building and scaling revenue operations across dozens of companies.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Whether you need a complete revenue transformation (B.O.T.), ongoing strategic support (Fractional), or embedded full-time execution, we have a model that fits your stage and goals.
+              </p>
+            </div>
+            <GlassCard className="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1000&h=600&fit=crop&q=80"
+                alt="Business process timeline showing build, operate, and transfer phases"
+                className="w-full h-[350px] object-cover rounded-lg"
+                loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
       {models.map((model, index) => (
         <section
           key={index}
@@ -364,7 +394,24 @@ const HowWeWork: React.FC = () => {
             </div>
           </div>
         </section>
-      ))}
+      ))});
+
+      {/* Partnership Image */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <GlassCard className="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop&q=80"
+              alt="Professional business partnership and collaboration for revenue growth"
+              className="w-full h-[400px] object-cover rounded-lg"
+              loading="lazy"
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
+            />
+          </GlassCard>
+        </div>
+      </section>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">

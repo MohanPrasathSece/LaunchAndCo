@@ -194,6 +194,23 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* Team Image */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <GlassCard className="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1522071901873-411886a10004?w=1200&h=800&fit=crop&q=80"
+              alt="Launch & Close team of revenue operations experts and operators"
+              className="w-full h-[450px] object-cover rounded-lg"
+              loading="lazy"
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
+            />
+          </GlassCard>
+        </div>
+      </section>
+
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -232,6 +249,32 @@ const About: React.FC = () => {
                 <p className="text-sm text-muted-foreground">{achievement.label}</p>
               </GlassCard>
             ))}
+          </div>
+
+          {/* Workspace Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+            <GlassCard className="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&h=667&fit=crop&q=80"
+                alt="Modern collaborative workspace showing Launch & Close company culture"
+                className="w-full h-[350px] object-cover rounded-lg"
+                loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+            </GlassCard>
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Built for Scale, Designed for Impact
+              </h3>
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                We work remotely across time zones, bringing together the best operators regardless of location. Our distributed model means you get access to top talent without geographic constraints.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Whether you're in San Francisco, London, or Singapore, we adapt to your timezone and business needs.
+              </p>
+            </div>
           </div>
 
           <GlassCard>

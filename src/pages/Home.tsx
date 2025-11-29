@@ -199,6 +199,23 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Team Collaboration Image */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <GlassCard className="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop&q=80"
+              alt="Professional team collaborating on revenue strategy in modern office"
+              className="w-full h-[400px] object-cover rounded-lg"
+              loading="lazy"
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
+            />
+          </GlassCard>
+        </div>
+      </section>
+
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">
@@ -207,25 +224,70 @@ const Home: React.FC = () => {
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Our proven process for building sustainable revenue engines
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {phases.map((phase, index) => (
-              <GlassCard key={index}>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold mr-4">
-                    {index + 1}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+            <div className="space-y-6">
+              {phases.map((phase, index) => (
+                <GlassCard key={index}>
+                  <div className="flex items-center mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold mr-4">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground">
+                        {phase.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">{phase.duration}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">
-                      {phase.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">{phase.duration}</p>
-                  </div>
-                </div>
+                </GlassCard>
+              ))}
+            </div>
+            <div>
+              <GlassCard className="overflow-hidden h-full">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80"
+                  alt="Revenue analytics dashboard showing growth metrics and KPIs"
+                  className="w-full h-full min-h-[400px] object-cover rounded-lg"
+                  loading="lazy"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
               </GlassCard>
-            ))}
+            </div>
           </div>
-        </div >
-      </section >
+        </div>
+      </section>
+
+      {/* Growth Strategy Image */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <GlassCard className="overflow-hidden order-2 lg:order-1">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&h=800&fit=crop&q=80"
+                alt="Strategic planning session for business growth and revenue acceleration"
+                className="w-full h-[350px] object-cover rounded-lg"
+                loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+            </GlassCard>
+            <div className="order-1 lg:order-2">
+              <h3 className="text-3xl font-bold text-foreground mb-4">
+                Built by Operators, For Operators
+              </h3>
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                We've been in your shoes. Our team has collectively built revenue engines from $0 to $50M+, managed teams of 200+, and led successful exits.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Now we bring that experience directly to your business—without the overhead, risk, or lengthy ramp time of traditional hiring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
