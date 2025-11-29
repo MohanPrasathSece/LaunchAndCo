@@ -69,13 +69,13 @@ const Header: React.FC = () => {
               </button>
               
               <div
-                className={`absolute top-full left-0 mt-1 w-48 bg-background/95 backdrop-blur-xl border border-border/60 rounded-lg shadow-lg overflow-hidden z-50 transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-1 w-56 bg-background/95 backdrop-blur-xl border border-border/60 rounded-lg shadow-lg overflow-hidden z-50 transition-all duration-200 ${
                   isServicesDropdownOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
                 }`}
               >
                 <Link
                   to="/services#strategy"
-                  className="block px-4 py-3 text-sm hover:bg-muted/20 transition-colors"
+                  className="block px-6 py-3 text-sm font-medium hover:bg-muted/20 transition-colors text-foreground"
                   onClick={(e) => {
                     e.preventDefault();
                     // Navigate to services page with hash
@@ -84,9 +84,10 @@ const Header: React.FC = () => {
                 >
                   Strategy
                 </Link>
+                <div className="border-t border-border/30" />
                 <Link
                   to="/services#execution"
-                  className="block px-4 py-3 text-sm hover:bg-muted/20 transition-colors"
+                  className="block px-6 py-3 text-sm font-medium hover:bg-muted/20 transition-colors text-foreground"
                   onClick={(e) => {
                     e.preventDefault();
                     // Navigate to services page with hash
@@ -95,9 +96,10 @@ const Header: React.FC = () => {
                 >
                   Execution
                 </Link>
+                <div className="border-t border-border/30" />
                 <Link
                   to="/services#tech"
-                  className="block px-4 py-3 text-sm hover:bg-muted/20 transition-colors"
+                  className="block px-6 py-3 text-sm font-medium hover:bg-muted/20 transition-colors text-foreground"
                   onClick={(e) => {
                     e.preventDefault();
                     // Navigate to services page with hash

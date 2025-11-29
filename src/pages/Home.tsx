@@ -130,51 +130,84 @@ const Home: React.FC = () => {
           </div>
           
           <div className="relative flex justify-center items-center">
-            {/* Connecting lines */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[2px] bg-gradient-to-r from-blue-500/30 via-blue-500/60 to-blue-500/30 hidden lg:block"></div>
+            {/* Connection lines between bubbles */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block" style={{ zIndex: 1 }}>
+              <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgb(147, 197, 253)" stopOpacity="0" />
+                  <stop offset="50%" stopColor="rgb(147, 197, 253)" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="rgb(147, 197, 253)" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              {/* Line from BUILD to LAUNCH */}
+              <line x1="25%" y1="50%" x2="50%" y2="50%" stroke="url(#lineGradient)" strokeWidth="2" />
+              {/* Line from LAUNCH to CLOSE */}
+              <line x1="50%" y1="50%" x2="75%" y2="50%" stroke="url(#lineGradient)" strokeWidth="2" />
+            </svg>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 relative z-10">
               {/* BUILD Circle */}
               <div className="text-center">
-                <div className="relative mx-auto w-40 h-40 lg:w-48 lg:h-48 mb-6">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/30 blur-xl"></div>
-                  <div className="relative w-full h-full rounded-full bg-gradient-to-br from-blue-500/30 to-blue-600/40 border-2 border-blue-400/50 flex flex-col items-center justify-center backdrop-blur-sm">
-                    <div className="text-2xl lg:text-3xl font-bold text-white mb-2">BUILD</div>
-                    <div className="text-xs lg:text-sm text-blue-200 px-4">Infrastructure</div>
+                <div className="relative mx-auto w-32 h-32 lg:w-40 lg:h-40 mb-6">
+                  {/* Glassy circle design with hover */}
+                  <div className="relative w-full h-full rounded-full border-2 border-blue-400/30 bg-white/10 backdrop-blur-md flex flex-col items-center justify-center shadow-xl transition-all duration-300 hover:bg-white/20 hover:border-blue-400/50 hover:shadow-2xl hover:scale-105">
+                    {/* Glass reflection effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-t from-blue-500/10 to-transparent"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <div className="text-2xl lg:text-3xl font-bold text-white mb-1">BUILD</div>
+                      <div className="text-xs lg:text-sm text-white/90 font-medium">Infrastructure</div>
+                    </div>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">Build</h3>
-                <p className="text-muted-foreground text-sm lg:text-base max-w-xs mx-auto">
+                <p className="text-muted-foreground text-sm lg:text-base max-w-xs mx-auto leading-relaxed">
                   Web, Apps, AI Agents. The digital foundation that powers your revenue engine.
                 </p>
               </div>
               
               {/* LAUNCH Circle */}
               <div className="text-center">
-                <div className="relative mx-auto w-40 h-40 lg:w-48 lg:h-48 mb-6">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-600/30 blur-xl"></div>
-                  <div className="relative w-full h-full rounded-full bg-gradient-to-br from-purple-500/30 to-purple-600/40 border-2 border-purple-400/50 flex flex-col items-center justify-center backdrop-blur-sm">
-                    <div className="text-2xl lg:text-3xl font-bold text-white mb-2">LAUNCH</div>
-                    <div className="text-xs lg:text-sm text-purple-200 px-4">Strategy</div>
+                <div className="relative mx-auto w-32 h-32 lg:w-40 lg:h-40 mb-6">
+                  {/* Glassy circle design with hover */}
+                  <div className="relative w-full h-full rounded-full border-2 border-blue-400/30 bg-white/10 backdrop-blur-md flex flex-col items-center justify-center shadow-xl transition-all duration-300 hover:bg-white/20 hover:border-blue-400/50 hover:shadow-2xl hover:scale-105">
+                    {/* Glass reflection effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-t from-blue-500/10 to-transparent"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <div className="text-2xl lg:text-3xl font-bold text-white mb-1">LAUNCH</div>
+                      <div className="text-xs lg:text-sm text-white/90 font-medium">Strategy</div>
+                    </div>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">Launch</h3>
-                <p className="text-muted-foreground text-sm lg:text-base max-w-xs mx-auto">
+                <p className="text-muted-foreground text-sm lg:text-base max-w-xs mx-auto leading-relaxed">
                   GTM, Consulting, Training. Strategic guidance to market and scale effectively.
                 </p>
               </div>
               
               {/* CLOSE Circle */}
               <div className="text-center">
-                <div className="relative mx-auto w-40 h-40 lg:w-48 lg:h-48 mb-6">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-500/20 to-emerald-600/30 blur-xl"></div>
-                  <div className="relative w-full h-full rounded-full bg-gradient-to-br from-emerald-500/30 to-emerald-600/40 border-2 border-emerald-400/50 flex flex-col items-center justify-center backdrop-blur-sm">
-                    <div className="text-2xl lg:text-3xl font-bold text-white mb-2">CLOSE</div>
-                    <div className="text-xs lg:text-sm text-emerald-200 px-4">Execution</div>
+                <div className="relative mx-auto w-32 h-32 lg:w-40 lg:h-40 mb-6">
+                  {/* Glassy circle design with hover */}
+                  <div className="relative w-full h-full rounded-full border-2 border-blue-400/30 bg-white/10 backdrop-blur-md flex flex-col items-center justify-center shadow-xl transition-all duration-300 hover:bg-white/20 hover:border-blue-400/50 hover:shadow-2xl hover:scale-105">
+                    {/* Glass reflection effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-t from-blue-500/10 to-transparent"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <div className="text-2xl lg:text-3xl font-bold text-white mb-1">CLOSE</div>
+                      <div className="text-xs lg:text-sm text-white/90 font-medium">Execution</div>
+                    </div>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">Close</h3>
-                <p className="text-muted-foreground text-sm lg:text-base max-w-xs mx-auto">
+                <p className="text-muted-foreground text-sm lg:text-base max-w-xs mx-auto leading-relaxed">
                   Sales Teams, SDRs, Account Management. The human element that drives results.
                 </p>
               </div>
