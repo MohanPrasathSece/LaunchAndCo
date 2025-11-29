@@ -83,24 +83,24 @@ const Home: React.FC = () => {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[750px] md:w-[1000px] h-[250px] sm:h-[375px] md:h-[500px] rounded-t-full bg-gradient-to-t from-blue-600/40 via-blue-500/25 to-transparent blur-xl"></div>
         <div className="relative z-10 max-w-6xl mx-auto text-center px-4 sm:px-6">
           <h1 className="text-4xl md:text-7xl font-bold text-white tracking-tight mb-6 md:mb-8 leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Transform Your <br />
+            Strategy. Talent. <br />
             <span className="text-white">
-              Revenue Engine
+              Technology.
             </span>
           </h1>
           <p className="text-base md:text-xl text-blue-100 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Senior GTM leadership without the full-time headcount. We build, operate, and transfer revenue engines for startups and SMBs.
+            The Complete Revenue Engine for Startups. We provide the Senior Leadership to plan it, the Dev Teams to build it, and the Sales Experts to close it.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 justify-center w-full">
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 text-sm md:text-base px-6 py-3 md:px-6 md:py-4 shadow-lg transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[280px] sm:max-w-none"
+              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 text-sm md:text-base px-4 py-2 md:px-6 md:py-4 shadow-lg transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[200px] sm:max-w-none"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               <Link to="/how-we-work" className="flex items-center justify-center">
-                View Engagement Models
+                View Our Models
                 <ArrowRight className="ml-2" size={16} />
               </Link>
             </Button>
@@ -108,7 +108,7 @@ const Home: React.FC = () => {
               asChild
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 border border-white text-sm md:text-base px-6 py-3 md:px-6 md:py-4 transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[280px] sm:max-w-none"
+              className="w-full sm:w-auto rounded-full bg-white text-slate-900 hover:bg-slate-100 border border-white text-sm md:text-base px-4 py-2 md:px-6 md:py-4 transition-all duration-300 font-semibold hover:scale-105 active:scale-95 h-auto min-h-0 max-w-[200px] sm:max-w-none"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               <Link to="/contact" className="flex items-center justify-center">Talk to an Expert</Link>
@@ -117,35 +117,81 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Moon continuation - expanding to sides */}
-        <div className="absolute top-0 left-0 right-0 w-full h-[400px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-500/25 via-blue-400/15 to-transparent blur-3xl"></div>
-        <div className="absolute top-0 left-0 right-0 w-full h-[300px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/35 via-blue-500/20 to-transparent blur-2xl"></div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">
-            Why Founders Get Stuck
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Common challenges that prevent startups from scaling predictably
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {painPoints.map((point, index) => (
-              <GlassCard key={index} className="text-center">
-                <div className="flex justify-center mb-4">
-                  <div className="p-4 rounded-full bg-primary/10">
-                    <point.icon className="w-8 h-8 text-primary" />
+      {/* The Triad Visual */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              The Complete Revenue Stack
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Three interconnected pillars that power your growth
+            </p>
+          </div>
+          
+          <div className="relative flex justify-center items-center">
+            {/* Connecting lines */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[2px] bg-gradient-to-r from-blue-500/30 via-blue-500/60 to-blue-500/30 hidden lg:block"></div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 relative z-10">
+              {/* BUILD Circle */}
+              <div className="text-center">
+                <div className="relative mx-auto w-40 h-40 lg:w-48 lg:h-48 mb-6">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/30 blur-xl"></div>
+                  <div className="relative w-full h-full rounded-full bg-gradient-to-br from-blue-500/30 to-blue-600/40 border-2 border-blue-400/50 flex flex-col items-center justify-center backdrop-blur-sm">
+                    <div className="text-2xl lg:text-3xl font-bold text-white mb-2">BUILD</div>
+                    <div className="text-xs lg:text-sm text-blue-200 px-4">Infrastructure</div>
                   </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
-                  {point.title}
-                </h3>
-                <p className="text-primary font-medium text-lg">
-                  {point.subtitle}
+                <h3 className="text-xl font-bold text-foreground mb-3">Build</h3>
+                <p className="text-muted-foreground text-sm lg:text-base max-w-xs mx-auto">
+                  Web, Apps, AI Agents. The digital foundation that powers your revenue engine.
                 </p>
-              </GlassCard>
-            ))}
+              </div>
+              
+              {/* LAUNCH Circle */}
+              <div className="text-center">
+                <div className="relative mx-auto w-40 h-40 lg:w-48 lg:h-48 mb-6">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-600/30 blur-xl"></div>
+                  <div className="relative w-full h-full rounded-full bg-gradient-to-br from-purple-500/30 to-purple-600/40 border-2 border-purple-400/50 flex flex-col items-center justify-center backdrop-blur-sm">
+                    <div className="text-2xl lg:text-3xl font-bold text-white mb-2">LAUNCH</div>
+                    <div className="text-xs lg:text-sm text-purple-200 px-4">Strategy</div>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">Launch</h3>
+                <p className="text-muted-foreground text-sm lg:text-base max-w-xs mx-auto">
+                  GTM, Consulting, Training. Strategic guidance to market and scale effectively.
+                </p>
+              </div>
+              
+              {/* CLOSE Circle */}
+              <div className="text-center">
+                <div className="relative mx-auto w-40 h-40 lg:w-48 lg:h-48 mb-6">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-500/20 to-emerald-600/30 blur-xl"></div>
+                  <div className="relative w-full h-full rounded-full bg-gradient-to-br from-emerald-500/30 to-emerald-600/40 border-2 border-emerald-400/50 flex flex-col items-center justify-center backdrop-blur-sm">
+                    <div className="text-2xl lg:text-3xl font-bold text-white mb-2">CLOSE</div>
+                    <div className="text-xs lg:text-sm text-emerald-200 px-4">Execution</div>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">Close</h3>
+                <p className="text-muted-foreground text-sm lg:text-base max-w-xs mx-auto">
+                  Sales Teams, SDRs, Account Management. The human element that drives results.
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* The Problem/Solution Block */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/5">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+            Stop Hiring Piecemeal.
+          </h2>
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            Most founders hire a Dev Agency for the product, a Consultant for the plan, and Recruiter for the sales team. The result? Disconnected systems and slow growth. Launch & Close brings the entire revenue stack under one roof.
+          </p>
         </div>
       </section>
 

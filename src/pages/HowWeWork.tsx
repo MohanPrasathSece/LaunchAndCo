@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import {
   Layers,
@@ -19,46 +17,46 @@ const HowWeWork: React.FC = () => {
       icon: Layers,
       title: "The B.O.T. Model",
       subtitle: "Build - Operate - Transfer",
-      description: "Our signature model. We build your sales infrastructure, operate it to prove ROI, and then hire and train your internal team to take over. You keep the IP, the playbooks, and the momentum.",
+      description: "Our signature model. We build the Tech (App/Web) and the Strategy (Playbooks), our Sales Team runs the engine to prove ROI, then we hire/train your internal team and hand over the Code and the Keys. You own the asset.",
       phases: [
         {
-          title: "Build",
-          duration: "Months 1-2",
-          objective: "Establish revenue foundations",
+          title: "BUILD",
+          duration: "Months 1-3",
+          objective: "We build the Tech (App/Web) and the Strategy (Playbooks)",
           activities: [
-            "Conduct comprehensive revenue audit",
-            "Design GTM strategy and sales process",
+            "Develop custom web/app infrastructure",
+            "Design GTM strategy and sales playbooks",
             "Implement CRM and automation systems",
-            "Develop sales playbooks and collateral",
-            "Set up tracking and reporting infrastructure"
+            "Build AI agents and support systems",
+            "Create tracking and reporting dashboards"
           ],
-          deliverable: "Fully operational revenue engine ready for execution"
+          deliverable: "Complete tech stack + strategic playbooks ready for execution"
         },
         {
-          title: "Operate",
-          duration: "Months 3-6",
-          objective: "Prove the model and generate revenue",
+          title: "OPERATE",
+          duration: "Months 4-6",
+          objective: "Our Sales Team runs the engine to prove ROI",
           activities: [
+            "Deploy fractional sales teams",
             "Execute outbound campaigns and pipeline generation",
             "Manage sales process from lead to close",
-            "Implement customer success workflows",
-            "Optimize based on real-time data",
-            "Document all processes and learnings"
+            "Optimize based on real-time performance data",
+            "Demonstrate predictable revenue growth"
           ],
-          deliverable: "Closed revenue, validated playbooks, performance benchmarks"
+          deliverable: "Proven ROI with documented revenue metrics and case studies"
         },
         {
-          title: "Transfer",
+          title: "TRANSFER",
           duration: "Months 7-9",
-          objective: "Build and empower your internal team",
+          objective: "We hire/train your internal team and hand over the Code and the Keys",
           activities: [
-            "Recruit and hire internal sales/CS team",
-            "Train new hires on proven playbooks",
-            "Shadow and coach during transition",
-            "Transfer all systems, processes, and IP",
+            "Recruit and hire your internal team",
+            "Train new hires on proven systems and playbooks",
+            "Transfer all technology assets and source code",
+            "Document all processes and customer relationships",
             "Provide ongoing advisory support"
           ],
-          deliverable: "Fully trained internal team operating independently"
+          deliverable: "Fully trained internal team + complete ownership of all assets"
         }
       ],
       pricing: "Monthly retainer + performance bonus tied to revenue milestones",
@@ -66,13 +64,13 @@ const HowWeWork: React.FC = () => {
     },
     {
       icon: Clock,
-      title: "Fractional / Part-Time Contract",
-      subtitle: "Executive Expertise on Demand",
-      description: "Executive expertise on a flexible basis. Perfect for SMBs needing a VP of Sales or CMO strategy for 10-20 hours a week without the C-Suite salary.",
+      title: "Fractional Retainers",
+      subtitle: "Executive Leadership on Demand",
+      description: "Executive leadership (VP Sales / Head of Product) on a flexible 10-20 hour/week basis. Senior expertise without the full-time commitment.",
       features: [
         {
           title: "Flexible Time Commitment",
-          description: "10, 20, or 40 hours per week based on your needs"
+          description: "10-20 hours per week based on your needs"
         },
         {
           title: "Senior-Level Expertise",
@@ -94,7 +92,7 @@ const HowWeWork: React.FC = () => {
       useCases: [
         "Fractional VP of Sales to build and manage sales team",
         "Fractional CMO to design and execute marketing strategy",
-        "Fractional Head of Customer Success to reduce churn",
+        "Fractional Head of Product to guide development roadmap",
         "Fractional RevOps leader to optimize systems and processes"
       ],
       included: [
@@ -109,46 +107,46 @@ const HowWeWork: React.FC = () => {
     },
     {
       icon: Zap,
-      title: "Full-Time Placement",
-      subtitle: "Embedded Execution",
-      description: "Embedded execution. For high-growth phases, we integrate fully into your org chart to drive aggressive targets.",
+      title: "Project Sprints",
+      subtitle: "30-90 Day Focused Execution",
+      description: "30-90 Day sprints for specific builds. Perfect for well-defined projects with clear deliverables and timelines.",
       features: [
         {
-          title: "Fully Embedded",
-          description: "Our team member works as a full-time employee within your organization"
+          title: "Fixed Scope & Timeline",
+          description: "Clear deliverables with defined start and end dates"
         },
         {
-          title: "Immediate Impact",
-          description: "No ramp time—we start executing from day one"
+          title: "Project-Based Pricing",
+          description: "Fixed cost for the entire sprint deliverable"
         },
         {
-          title: "Aggressive Targets",
-          description: "Designed for high-growth phases requiring intense focus"
+          title: "Rapid Execution",
+          description: "Dedicated team focused on your specific project"
         },
         {
-          title: "Team Integration",
-          description: "Participates in all team meetings, planning, and culture activities"
+          title: "Measurable Outcomes",
+          description: "Success metrics defined upfront and tracked throughout"
         },
         {
-          title: "Flexible Duration",
-          description: "3-12 month placements with option to convert to permanent hire"
+          title: "Specialized Teams",
+          description: "Right experts for your specific needs (dev, sales, strategy)"
         }
       ],
       scenarios: [
-        "Rapid scaling phase requiring immediate sales leadership",
-        "Product launch needing dedicated go-to-market execution",
-        "Market expansion requiring local expertise",
-        "Turnaround situations needing intensive intervention"
+        "\"Build my MVP\" - Complete product development sprint",
+        "\"Fix my Sales Funnel\" - Revenue optimization project",
+        "\"Launch my Marketing\" - GTM execution sprint",
+        "\"Implement AI Chatbots\" - Technology integration project"
       ],
       included: [
-        "40+ hours per week dedicated to your business",
-        "Full participation in team operations",
-        "Direct management of internal team members",
-        "Accountability for specific revenue or operational targets",
-        "Transition planning if converting to permanent hire"
+        "Dedicated project team and manager",
+        "Weekly progress reports and demos",
+        "All deliverables as specified in scope",
+        "Project documentation and handover",
+        "30-day post-project support"
       ],
-      pricing: "Monthly retainer (equivalent to fractional C-suite cost) + performance incentives",
-      idealFor: "Series B+ companies in hypergrowth; businesses with urgent revenue needs; companies preparing for fundraising or acquisition."
+      pricing: "Fixed project fee based on scope and duration",
+      idealFor: "Startups with specific project needs; companies between funding rounds; businesses needing targeted expertise without ongoing commitment."
     }
   ];
 
@@ -157,31 +155,31 @@ const HowWeWork: React.FC = () => {
       feature: "Time Commitment",
       bot: "9-12 months",
       fractional: "Ongoing, flexible",
-      fullTime: "3-12 months"
+      fullTime: "30-90 days"
     },
     {
       feature: "Hours per Week",
       bot: "20-40",
-      fractional: "10-40",
-      fullTime: "40+"
+      fractional: "10-20",
+      fullTime: "Project-based"
     },
     {
       feature: "Best For",
-      bot: "Building from scratch",
-      fractional: "Ongoing support",
-      fullTime: "Hypergrowth phases"
+      bot: "Building complete revenue stack",
+      fractional: "Ongoing strategic support",
+      fullTime: "Specific project delivery"
     },
     {
-      feature: "Knowledge Transfer",
-      bot: "Full IP transfer",
+      feature: "Asset Ownership",
+      bot: "Full transfer to you",
       fractional: "Continuous advisory",
-      fullTime: "Embedded execution"
+      fullTime: "Project deliverables"
     },
     {
       feature: "Team Building",
       bot: "Included",
       fractional: "Optional",
-      fullTime: "Included"
+      fullTime: "As needed"
     }
   ];
 
@@ -190,22 +188,22 @@ const HowWeWork: React.FC = () => {
       model: "B.O.T. Success",
       client: "Series A SaaS company",
       challenge: "Founder-led sales, no repeatable process",
-      solution: "9-month B.O.T. engagement",
-      results: "Built sales team of 5, generated $2M ARR, transferred fully operational revenue engine"
+      solution: "9-month B.O.T. engagement with full tech stack build-out",
+      results: "Built sales team of 5, generated $2M ARR, transferred complete codebase and playbooks"
     },
     {
       model: "Fractional Success",
       client: "Bootstrapped B2B software company",
       challenge: "Needed sales leadership but couldn't afford full-time VP",
-      solution: "Fractional VP of Sales, 20 hours/week",
-      results: "3x pipeline growth in 6 months, closed first enterprise deals, trained internal AE"
+      solution: "Fractional VP of Sales, 15 hours/week for 8 months",
+      results: "3x pipeline growth, closed first enterprise deals, trained internal AE"
     },
     {
-      model: "Full-Time Success",
-      client: "Series B company entering new market",
-      challenge: "Aggressive expansion timeline, no local expertise",
-      solution: "Full-time embedded sales leader for 6 months",
-      results: "Established market presence, $1.5M in new market revenue, hired and trained local team"
+      model: "Project Sprint Success",
+      client: "Pre-seed startup",
+      challenge: "Needed MVP built and sales funnel launched",
+      solution: "60-day project sprint: MVP development + GTM setup",
+      results: "Launched product with 50 beta users, $20k pipeline in first month"
     }
   ];
 
@@ -214,10 +212,10 @@ const HowWeWork: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/10 min-h-[50vh] flex flex-col justify-center">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Flexible Engagement Models Built for Your Stage
+            Flexible Delivery. Zero Bloat.
           </h1>
           <p className="text-xl text-muted-foreground">
-            Whether you need a full revenue transformation or targeted fractional support, we have a model that fits your timeline, budget, and goals.
+            Engagement models designed for how startups actually work. No long-term commitments, no overhead—just results.
           </p>
         </div>
       </section>
@@ -416,7 +414,7 @@ const HowWeWork: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
-            Which Model Is Right for You?
+            Which Model Fits Your Stage?
           </h2>
 
           <div className="overflow-x-auto">
@@ -426,7 +424,7 @@ const HowWeWork: React.FC = () => {
                   <th className="text-left py-4 px-4 text-foreground font-bold">Feature</th>
                   <th className="text-center py-4 px-4 text-foreground font-bold">B.O.T. Model</th>
                   <th className="text-center py-4 px-4 text-foreground font-bold">Fractional</th>
-                  <th className="text-center py-4 px-4 text-foreground font-bold">Full-Time</th>
+                  <th className="text-center py-4 px-4 text-foreground font-bold">Project Sprints</th>
                 </tr>
               </thead>
               <tbody>

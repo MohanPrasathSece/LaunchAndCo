@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import {
   Target,
@@ -130,10 +128,10 @@ const About: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 min-h-[50vh] flex flex-col justify-center">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Operators, Not Just Consultants.
+            Operators, Not Just Advisors.
           </h1>
           <p className="text-xl text-muted-foreground">
-            We are revenue leaders who have built, scaled, and exited. We don't theorize—we execute.
+            Launch & Close is a full-stack growth partner. We realized that modern startups don't just need sales advice—they need the Tech Stack to support it and the Talent to run it. We are a collective of senior operators who bridge the gap between 'Hello World' and 'Deal Closed'.
           </p>
         </div>
       </section>

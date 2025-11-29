@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmail } from "@/services/emailService";
@@ -21,9 +22,10 @@ const Contact: React.FC = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
+    companyUrl: "",
     email: "",
     phone: "",
-    company: "",
+    serviceNeeded: "",
     message: ""
   });
 
@@ -38,8 +40,8 @@ const Contact: React.FC = () => {
       await sendEmail({
         name: formData.name,
         email: formData.email,
-        subject: `Contact from ${formData.company}`,
-        message: `Phone: ${formData.phone}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
+        subject: `Contact from ${formData.companyUrl}`,
+        message: `Company URL: ${formData.companyUrl}\nPhone: ${formData.phone}\nService Needed: ${formData.serviceNeeded}\n\nMessage:\n${formData.message}`
       });
 
       // Show confirmation dialog
@@ -52,9 +54,10 @@ const Contact: React.FC = () => {
 
       setFormData({
         name: "",
+        companyUrl: "",
         email: "",
         phone: "",
-        company: "",
+        serviceNeeded: "",
         message: ""
       });
     } catch (error) {
@@ -79,10 +82,10 @@ const Contact: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-accent uppercase tracking-[0.2em] mb-4">Get in Touch</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Let's Start a Conversation
+            Ready to Build Your Revenue Engine?
           </h1>
           <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Ready to accelerate your revenue growth? Share your challenges and we'll show you how we can help.
+            Let's discuss how we can help you build a predictable, scalable revenue engine.
           </p>
         </div>
       </section>
@@ -102,29 +105,27 @@ const Contact: React.FC = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <Label htmlFor="name" className="text-base">Name *</Label>
-                  <Input
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) => handleChange("name", e.target.value)}
-                    required
-                    className="mt-2 text-base h-12"
-                  />
-                </div>
+              <div>
+                <Label htmlFor="name" className="text-base">Name *</Label>
+                <Input
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => handleChange("name", e.target.value)}
+                  required
+                  className="mt-2 text-base h-12"
+                />
+              </div>
 
-                <div>
-                  <Label htmlFor="phone" className="text-base">Phone Number *</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleChange("phone", e.target.value)}
-                    required
-                    className="mt-2 text-base h-12"
-                  />
-                </div>
+              <div>
+                <Label htmlFor="companyUrl" className="text-base">Company URL *</Label>
+                <Input
+                  id="companyUrl"
+                  value={formData.companyUrl}
+                  onChange={(e) => handleChange("companyUrl", e.target.value)}
+                  placeholder="https://yourcompany.com"
+                  required
+                  className="mt-2 text-base h-12"
+                />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -141,11 +142,12 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="company" className="text-base">Company name *</Label>
+                  <Label htmlFor="phone" className="text-base">Phone number *</Label>
                   <Input
-                    id="company"
-                    value={formData.company}
-                    onChange={(e) => handleChange("company", e.target.value)}
+                    id="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => handleChange("phone", e.target.value)}
                     required
                     className="mt-2 text-base h-12"
                   />
@@ -153,11 +155,27 @@ const Contact: React.FC = () => {
               </div>
 
               <div>
-                <Label htmlFor="message" className="text-base">Anything else we should know?</Label>
+                <Label htmlFor="serviceNeeded" className="text-base">What do you need? *</Label>
+                <Select value={formData.serviceNeeded} onValueChange={(value) => handleChange("serviceNeeded", value)} required>
+                  <SelectTrigger className="mt-2 text-base h-12">
+                    <SelectValue placeholder="Select a service" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="strategy">Strategy (Consulting/Fractional)</SelectItem>
+                    <SelectItem value="execution">Execution (Sales/CS Teams)</SelectItem>
+                    <SelectItem value="tech">Tech (Web/App/AI Build)</SelectItem>
+                    <SelectItem value="everything">Everything (The Full Stack)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label htmlFor="message" className="text-base">Additional details</Label>
                 <Textarea
                   id="message"
                   value={formData.message}
                   onChange={(e) => handleChange("message", e.target.value)}
+                  placeholder="Tell us more about your specific needs..."
                   rows={5}
                   className="mt-2 text-base"
                 />
