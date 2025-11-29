@@ -59,7 +59,6 @@ const About: React.FC = () => {
     { label: "Successful exits", value: "5" },
     { label: "IPOs", value: "3" },
     { label: "Acquisitions", value: "10+" },
-    { label: "Revenue Generated", value: "$500M+" },
     { label: "Teams Built", value: "200+" }
   ];
 
@@ -163,7 +162,6 @@ const About: React.FC = () => {
             <ul className="space-y-2 text-base text-muted-foreground">
               <li>• 10+ years leading B2B revenue teams</li>
               <li>• 3x exits, including a venture-backed SaaS company</li>
-              <li>• Built revenue engines from $0 to $10M+ ARR</li>
               <li>• Fractional VP of Sales for 6+ companies</li>
             </ul>
           </div>

@@ -74,26 +74,6 @@ const Home: React.FC = () => {
     }
   ];
 
-  const metrics = [
-    { value: "$50M+", label: "Total revenue generated for clients" },
-    { value: "85%", label: "Average increase in qualified pipeline" },
-    { value: "6 months", label: "Average time to full team transfer" }
-  ];
-
-  const testimonials = [
-    {
-      quote: "Launch & Close didn't just give us a strategy deck—they built our entire sales engine and closed our first $500K in ARR.",
-      author: "Founder, SaaS Startup"
-    },
-    {
-      quote: "We avoided a costly VP of Sales hire and got senior execution for a fraction of the cost. Best decision we made.",
-      author: "CEO, B2B Tech Company"
-    },
-    {
-      quote: "They operated like an internal team but brought external expertise we couldn't afford full-time.",
-      author: "Investor, Growth Equity"
-    }
-  ];
 
   return (
     <div className="min-h-screen">
@@ -289,40 +269,41 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-12">
-            Trusted by Founders Who Demand Results
+      {/* Bottom CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white/5">
+        <div className="absolute top-0 left-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+            Ready to Transform Your Revenue Engine?
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {metrics.map((metric, index) => (
-              <GlassCard key={index} className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                  {metric.value}
-                </div>
-                <p className="text-muted-foreground text-lg">{metric.label}</p>
-              </GlassCard>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <GlassCard key={index}>
-                <p className="text-foreground text-lg mb-4 italic leading-relaxed">
-                  "{testimonial.quote}"
-                </p>
-                <p className="text-base text-muted-foreground font-medium">
-                  — {testimonial.author}
-                </p>
-              </GlassCard>
-            ))}
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Let's discuss how we can help you build a predictable, scalable revenue engine without the overhead of full-time hires.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+            >
+              <Link to="/contact" className="flex items-center">
+                Schedule a Free Consultation
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+            >
+              <Link to="/how-we-work" className="flex items-center">
+                Learn How We Work
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
-
-
-    </div >
+    </div>
   );
 };
 
