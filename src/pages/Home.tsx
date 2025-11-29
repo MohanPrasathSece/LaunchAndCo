@@ -130,21 +130,6 @@ const Home: React.FC = () => {
           </div>
           
           <div className="relative flex justify-center items-center">
-            {/* Connection lines between bubbles */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block" style={{ zIndex: 1 }}>
-              <defs>
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="rgb(147, 197, 253)" stopOpacity="0" />
-                  <stop offset="50%" stopColor="rgb(147, 197, 253)" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="rgb(147, 197, 253)" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              {/* Line from BUILD to LAUNCH */}
-              <line x1="25%" y1="50%" x2="50%" y2="50%" stroke="url(#lineGradient)" strokeWidth="2" />
-              {/* Line from LAUNCH to CLOSE */}
-              <line x1="50%" y1="50%" x2="75%" y2="50%" stroke="url(#lineGradient)" strokeWidth="2" />
-            </svg>
-            
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 relative z-10">
               {/* BUILD Circle */}
               <div className="text-center">
