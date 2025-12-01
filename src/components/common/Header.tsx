@@ -53,6 +53,17 @@ const Header: React.FC = () => {
               Home
             </Link>
             
+            <Link
+              to="/about"
+              onClick={() => handleNavClick('/about')}
+              className={`text-sm font-light px-4 py-2 rounded-full transition-smooth uppercase tracking-wide ${location.pathname === '/about'
+                ? "text-foreground bg-muted/40"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/20"
+                }`}
+            >
+              About
+            </Link>
+            
             {/* Services Dropdown */}
             <div 
               className="relative group"
@@ -124,17 +135,6 @@ const Header: React.FC = () => {
             </Link>
             
             <Link
-              to="/about"
-              onClick={() => handleNavClick('/about')}
-              className={`text-sm font-light px-4 py-2 rounded-full transition-smooth uppercase tracking-wide ${location.pathname === '/about'
-                ? "text-foreground bg-muted/40"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted/20"
-                }`}
-            >
-              About
-            </Link>
-            
-            <Link
               to="/contact"
               onClick={() => handleNavClick('/contact')}
               className={`text-sm font-light px-4 py-2 rounded-full transition-smooth uppercase tracking-wide ${location.pathname === '/contact'
@@ -185,6 +185,20 @@ const Header: React.FC = () => {
                     }`}
                 >
                   Home
+                </Link>
+                
+                <Link
+                  to="/about"
+                  onClick={() => {
+                    handleNavClick('/about');
+                    setIsMenuOpen(false);
+                  }}
+                  className={`text-lg font-medium py-3 px-4 rounded-xl transition-all ${location.pathname === '/about'
+                    ? "bg-white/10 text-white"
+                    : "text-white/70 hover:text-white hover:bg-white/5"
+                    }`}
+                >
+                  About
                 </Link>
                 
                 {/* Mobile Services Dropdown */}
@@ -244,20 +258,6 @@ const Header: React.FC = () => {
                     }`}
                 >
                   Engagement Models
-                </Link>
-                
-                <Link
-                  to="/about"
-                  onClick={() => {
-                    handleNavClick('/about');
-                    setIsMenuOpen(false);
-                  }}
-                  className={`text-lg font-medium py-3 px-4 rounded-xl transition-all ${location.pathname === '/about'
-                    ? "bg-white/10 text-white"
-                    : "text-white/70 hover:text-white hover:bg-white/5"
-                    }`}
-                >
-                  About
                 </Link>
                 
                 <Link
