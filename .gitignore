@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+<<<<<<< HEAD
 # Dependencies
 node_modules
 .pnp
@@ -41,6 +42,20 @@ thumbs.db
 .vscode/*
 !.vscode/extensions.json
 .idea
+=======
+node_modules
+dist
+dist-ssr
+output
+*.local
+package-lock.json
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+>>>>>>> b19942eda0254ebfc2d685c3a79bbdfffa9802e4
 *.suo
 *.ntvs*
 *.njsproj
@@ -49,6 +64,7 @@ thumbs.db
 .sync
 history/*.json
 .vite_cache
+<<<<<<< HEAD
 
 # Version control
 .git/
@@ -57,3 +73,5 @@ history/*.json
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+=======
+>>>>>>> b19942eda0254ebfc2d685c3a79bbdfffa9802e4
