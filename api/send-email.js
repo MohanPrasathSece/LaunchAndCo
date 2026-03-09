@@ -10,22 +10,25 @@ const emailSchema = z.object({
 });
 
 // Create SMTP transporter
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp.gmail.com',
   port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: false, // true for 465, false for other ports
+  secure: false,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false,
   },
 });
 
 export default async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
-    return res.status(405).json({ 
-      success: false, 
-      message: 'Method not allowed' 
+    return res.status(405).json({
+      success: false,
+      message: 'Method not allowed'
     });
   }
 
@@ -34,10 +37,10 @@ export default async function handler(req, res) {
     const validatedData = emailSchema.parse(req.body);
 
     // Email options - send to multiple recipients
-    const recipientEmails = process.env.RECIPIENT_EMAIL ? 
-      process.env.RECIPIENT_EMAIL.split(',').map(email => email.trim()) : 
+    const recipientEmails = process.env.RECIPIENT_EMAIL ?
+      process.env.RECIPIENT_EMAIL.split(',').map(email => email.trim()) :
       [process.env.SMTP_USER];
-    
+
     const mailOptions = {
       from: `"${validatedData.name}" <${process.env.SMTP_USER}>`,
       to: recipientEmails.join(', '), // Multiple recipients
@@ -92,25 +95,25 @@ export default async function handler(req, res) {
 
     await transporter.sendMail(confirmationOptions);
 
-    res.status(200).json({ 
-      success: true, 
-      message: 'Email sent successfully!' 
+    res.status(200).json({
+      success: true,
+      message: 'Email sent successfully!'
     });
 
   } catch (error) {
     console.error('Error sending email:', error);
-    
+
     if (error instanceof z.ZodError) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Validation error', 
-        errors: error.errors 
+      return res.status(400).json({
+        success: false,
+        message: 'Validation error',
+        errors: error.errors
       });
     }
 
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to send email. Please try again later.' 
+    res.status(500).json({
+      success: false,
+      message: 'Failed to send email. Please try again later.'
     });
   }
 }

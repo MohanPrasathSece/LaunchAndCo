@@ -30,6 +30,9 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  tls: {
+    rejectUnauthorized: false, // bypass self-signed cert errors from local proxy/antivirus
+  },
 });
 
 // Email endpoint
@@ -136,7 +139,8 @@ app.post('/api/send-email', async (req, res) => {
 
     res.status(500).json({
       success: false,
-      message: 'Failed to send email. Please try again later.'
+      message: 'Failed to send email. Please try again later.',
+      error: error.message || String(error)
     });
   }
 });
