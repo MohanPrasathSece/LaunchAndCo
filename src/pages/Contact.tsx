@@ -37,21 +37,22 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      await sendEmail({
-        name: formData.name,
-        email: formData.email,
-        subject: `Contact from ${formData.companyUrl}`,
-        message: `Company URL: ${formData.companyUrl}\nPhone: ${formData.phone}\nService Needed: ${formData.serviceNeeded}\n\nMessage:\n${formData.message}`
-      });
-
-      // Show confirmation dialog
+      // Show confirmation dialog immediately
       setShowConfirmation(true);
-
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out! We'll respond within 24 hours.",
       });
 
+      // Save form data for background sending
+      const dataToSend = {
+        name: formData.name,
+        email: formData.email,
+        subject: `Contact from ${formData.companyUrl}`,
+        message: `Company URL: ${formData.companyUrl}\nPhone: ${formData.phone}\nService Needed: ${formData.serviceNeeded}\n\nMessage:\n${formData.message}`
+      };
+
+      // Clear the form immediately
       setFormData({
         name: "",
         companyUrl: "",
@@ -60,12 +61,14 @@ const Contact: React.FC = () => {
         serviceNeeded: "",
         message: ""
       });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
-        variant: "destructive"
-      });
+
+      // Send the email in the background after 1 second delay
+      setTimeout(() => {
+        sendEmail(dataToSend).catch(err => {
+          console.error('Background sendEmail failed:', err);
+        });
+      }, 1000);
+
     } finally {
       setIsSubmitting(false);
     }
